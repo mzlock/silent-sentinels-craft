@@ -1,1 +1,14 @@
-node_modules
+# System files
+.DS_Store
+.sass-cache
+
+# Environment-specific content
+craft/storage/*
+public/localstorage/*
+.env
+
+# Development
+/node_modules
+public/assets
+npm-debug.log
+composer.phar
