@@ -13,7 +13,9 @@ return array(
 	'siteUrl' => null,
 
 	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-	'environmentVariables' => array(),
+	'environmentVariables' => array(
+		'baseUrl' => '//localhost/'
+	),
 
 	// Default Week Start Day (0 = Sunday, 1 = Monday...)
 	'defaultWeekStartDay' => 0,

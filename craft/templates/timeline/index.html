@@ -1,0 +1,25 @@
+{% extends "_layout" %}
+ {% block content %}
+  {% for entry in craft.entries.section('timeline').find() %}
+    <header>
+      <h1>
+        <span>{{entry.leadIn}}</span>
+        {{ entry.titleText }}
+      </h1>
+      <small>{{entry.date}}</small>
+    </header>
+
+    {% for block in entry.timelineMatricies %}
+      <article>
+        {{ block.leadIn }}
+        {{ block.quote }}
+        {{ block.leadOut }}
+        {{ block.attribution }}
+        {{ block.context }}
+        {% for asset in block.image %}
+          <img src="{{ asset.getUrl }}" alt="">
+        {% endfor %}
+      </article>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}
