@@ -11,15 +11,19 @@
 
     {% for block in entry.timelineMatricies %}
       <article>
-        {{ block.leadIn }}
-        {{ block.quote }}
+        <blockquote>{{ block.leadIn }}
+        <span class="quote__block">{{ block.quote }}</span>
         {{ block.leadOut }}
-        {{ block.attribution }}
-        {{ block.context }}
+      </blockquote>
+      <cite>
+        <span class="quote__attribution">{{ block.attribution }}</span>
+        <span class="quote__context">{{ block.context }}</span>
+      </cite>
         {% for asset in block.image %}
           <img src="{{ asset.getUrl }}" alt="">
         {% endfor %}
       </article>
     {% endfor %}
+
   {% endfor %}
 {% endblock %}
