@@ -5,6 +5,9 @@
 @import "base/colors.scss";
 
 @import "vendor/reset";
+@import "vendor/linear-gradient";
+
+@import "build/variables";
 @import "build/functions";
 @import "build/mixins";
 @import "base/elements.scss";
@@ -14,16 +17,10 @@
 @import "base/utilities.scss";
 
 // page or component pieces
-@import "components/components";
 
-@import "pages/page";
+@import "components/footer";
+@import "components/nav";
+@import "components/matrix/statement-and-image-block-split";
 
-body {
-  // @include linear-gradient(to bottom, $c-teal, $c-darkPurple);
- 
-}
-
-.background__image {
-  height: 100px;
-  width: 200px;
-}
+@import "pages/index";
+@import "pages/404";

@@ -1,13 +1,17 @@
-<section class="timeline__block quote__block">
+<section class="timeline__block quote-image">
+  <div class="timeline__block__inner">
     <blockquote>
-        {{ block.leadIn }}
-        <span class="quote__block">{{ block.quote }}</span> {{ block.leadOut }}
+      {{ block.leadIn }}
+      <span class="quote-image__main">{{ block.quote }}</span>
+      {{ block.leadOut }}
+      <cite>
+        <span class="quote-image__attribution">{{ block.attribution }}</span>
+        <span class="quote-image__context">{{ block.context }}</span>
+      </cite>
     </blockquote>
-    <cite>
-        <span class="quote__attribution">{{ block.attribution }}</span>
-        <span class="quote__context">{{ block.context }}</span>
-    </cite>
-    <div class="quote__image__container">
-        <div class="statement__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+
+    <div class="quote-image__image-container">
+      <div class="quote-image__image-container__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
     </div>
+  </div>
 </section>
