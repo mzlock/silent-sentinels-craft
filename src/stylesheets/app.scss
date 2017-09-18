@@ -1,4 +1,29 @@
 @import "base/typography";
+
+@import "vendor/breakpoint.scss";
+
+@import "base/colors.scss";
+
+@import "vendor/reset";
+@import "build/functions";
+@import "build/mixins";
+@import "base/elements.scss";
+
+@import "base/typography.scss";
+
+@import "base/utilities.scss";
+
+// page or component pieces
+@import "components/components";
+
+@import "pages/page";
+
 body {
-  background-color: blue;
+  // @include linear-gradient(to bottom, $c-teal, $c-darkPurple);
+ 
+}
+
+.background__image {
+  height: 100px;
+  width: 200px;
 }

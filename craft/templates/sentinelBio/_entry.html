@@ -6,18 +6,15 @@
           <span>{{entry.leadIn}}</span>
           {{ entry.titleText }}
         </h1>
-        <small>{{entry.date}}</small>
+        <p>{{entry.description}}</p>
         <img src="{{ entry.image.first().url }}" alt="">
       </header>
 
-      {% if entry.timelineMatrices|length %}
-        {% for block in entry.timelineMatrices %}
-
-          {% set type = "" ~ block.type %}
-          {% include "_includes/" ~ cc2kc(type) %}
-
-        {% endfor %}
-      {% endif %}
+      {% for entry %}
+      <ul>
+        <li><a href="entry.url" style="background-image: url('{{ entry.image.first().getUrl }}')"><span>{entry.sentinel}</span></a></li>
+      </ul>
+      {% endfor %}
   </main>
 
 {% endblock %}
