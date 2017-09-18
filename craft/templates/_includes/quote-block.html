@@ -1,0 +1,13 @@
+<section class="timeline__block quote__block">
+    <blockquote>
+        {{ block.leadIn }}
+        <span class="quote__block">{{ block.quote }}</span> {{ block.leadOut }}
+    </blockquote>
+    <cite>
+        <span class="quote__attribution">{{ block.attribution }}</span>
+        <span class="quote__context">{{ block.context }}</span>
+    </cite>
+    <div class="quote__image__container">
+        <div class="statement__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    </div>
+</section>

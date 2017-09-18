@@ -1,34 +1,105 @@
-{#
- # Homepage template
- # ---------------
- #
- # When this template gets loaded, it will be because someone has accessed
- # http://yoursite.com/ (without any URI). Craft checks to see if you have
- # a Single section set to be the Homepage (as you do, by default), and
- # loads the section’s Template (this file). A special ‘entry’ variable
- # will already be set for you, assigned to the Homepage entry.
- #
- # It's worth noting that even if you didn't have a Homepage Single section,
- # as long as this template remains at craft/templates/index.html, it
- # would still be the one to get loaded when accessing http://yoursite.com/,
- # albeit without an ‘entry’ variable already set for you.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
- #}
-
+{# 
+	# Homepage template 
+	# --------------- 
+#}
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
+<main class="home">
+	<header>
+		<small><span>Before Hillary,</span> <span> Before Women's Lib, </span> <span>There Were The...</span></small>
+		<div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div>
+		<h1>Silent Sentinels</h1>
+		<p>The Silent Sentinels were 72 women who picketed, protested, and even went to prison, whatever it took to get women the
+			right to vote. Taunts, beatings, and torure did not deter them.</p>
+		<p>Help us build a museum to honor these brave women. We can make sure the sentinels are silent no longer.</p>
+	</header>
 
-	{{ entry.body }}
-	{{ entry.colorPicker }}
+	<nav class="home__links">
+		<ul>
+			{% set entry = craft.entries.section('timeline') %}
+				{% if not craft.request.isLivePreview %} 
+					{% for item in entry %}
+						<li>
+							<a href="{{item.getUrl()}}">{{item}}</a>
+						</li>
+					{% endfor %}
+				{% endif %}
+		</ul>
+	</nav>
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+	<section class="home__who">
+		<div class="who__inner">
+			<h2><span>Who were the</span> Silent Sentinels?</h2>
+			<nav>
+				<a href="/watchvideo"> Watch Video</a>
+				<a href="/learnmore"> Learn About the Sentinels</a>
+			</nav>
+			<p>The Silent Sentinels were a group of women in favor of women's suffrage organized by <a href="http://lmgtfy.com/?q=alice+paul">Alice Paul</a> and the National Woman's Party. They protested in front of the White House during Woodrow Wilson's presidency starting
+				on January 10, 1917. The women protested for six days a week until June 4, 1919 when the Nineteenth Amendment to the
+				United States Constitution was passed both by the House of Representatives and the Senate.</p>
+			<div class="background__container">
+				<div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home__quote">
+		<div class="quote__inner">
+			<blockquote>“the Government must not think that they can stop this agitation.
+				<span>It will go on.</span> We are here not because we are law-breakers; we are here in our efforts to become law-makers.”</blockquote>
+			<cite>Emmeline Pankhurst</cite>
+			<div class="background__container">
+				<div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home__campaignAndMuseum">
+		<h2>The Campaign and Museum</h2>
+		<p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote in
+			our democracy. The site is considered hallowed ground for the suffragists and for the modern women’s movement. It will
+			provide historical context to the movement toward franchise and also provide individual stories of the women who helped
+			bring about the ratification of the 19th Amendment to the U.S. Constitution.</p>
+
+		<div class="background__container">
+			<div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div>
+		</div>
+
+		<div class="campaignAndMuseum__quotes">
+			<blockquote>“Decide what your commitment is, make it public, and... report back ot us on your progress so that we can share your story.”
+			</blockquote>
+			<ul>
+				<li><img src="#" alt="">Nancy Pelosi</li>
+				<li><img src="#" alt="">Jessica Williams</li>
+				<li><img src="#" alt="">Malala Yousafzai</li>
+			</ul>
+		</div>
+
+		<div class="campaignAndMuseum__purpose">
+			<h3>What will the museum be?</h3>
+			<p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote in
+				our democracy.</p>
+			<p>The site is considered hallowed ground</p>
+			<p>for the suffragists and for the modern women’s movement. </p>
+			<p>It will provide historical context to the movement toward franchise and also provide individual stories of the women </p>
+			<p>who helped bring about the ratification of the 19th Amendment to the U.S. Constitution.</p>
+
+			<div class="purpose__ambassadors">
+				<h3>Campaign Ambassadors</h3>
+				<ul>
+					<li>Oprah Winfrey</li>
+					<li>Eleanor Holmes Norton</li>
+					<li>Amy Poehler</li>
+					<li>Daenerys Targaryen</li>
+					<li>Ruth Bader Ginsberg</li>
+				</ul>
+			</div>
+			<img src="./assets/images/homeCampaign1.png" alt="">
+			<img src="./assets/images/homeCampaign2.png" alt="">
+		</div>
+
+	</section>
+</main>
+
 {% endblock %}

@@ -1,0 +1,11 @@
+<section class="timeline__block fact__image-full">
+  <div class="inner__statement">
+    <div class="statement__text">
+      <h2>{{ block.fact }}</h2>
+      <p>{{ block.statement }}</p>
+    </div>
+    <div class="statement__image__container">
+      <div class="statement__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    </div>
+  </div>
+</section>

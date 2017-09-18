@@ -1,0 +1,33 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+ul,
+li,
+span, figcaption {
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    text-shadow: none;
+  }
+}
+
+p {
+  line-height: 1.4;
+}
