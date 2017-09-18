@@ -1,15 +1,16 @@
-@function rd($x, $y) {
-  $size: percentage($x / $y);
-  @return $size;
-}
-
 @function rem($x) {
   $size: ($x / 16);
   @return #{$size}rem;
 }
 
 @function multiBase($num) {
-  $base: 16px;
   @return $num * $base;
 }
 
+@function color($key) {
+  @return map-get($colors, "#{ $key }");
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

@@ -1,6 +1,6 @@
 {% extends "_layout" %}
 {% block content %}
-  <main class="timeline {{ craft.request.getSegment(1) ?: 'home' }}">
+  <main class="timeline">
       <header>
         <h1>
           <span>{{entry.leadIn}}</span>
@@ -10,8 +10,8 @@
         <img src="{{ entry.image.first().url }}" alt="">
       </header>
 
-      {% if entry.timelineMatrices|length %}
-        {% for block in entry.timelineMatrices %}
+      {% if entry.timelineMatrix|length %}
+        {% for block in entry.timelineMatrix %}
 
           {% set type = "" ~ block.type %}
           {% include "_includes/" ~ cc2kc(type) %}

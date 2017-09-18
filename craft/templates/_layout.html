@@ -13,9 +13,9 @@
 </head>
 
 <body>
-  <nav class="global__navigation">
+  <nav class="global-navigation">
     <a href="/">Silent Sentinels</a>
-    <ul class="navigation__pages">
+    <ul class="global-navigation__pages">
       {% for entry in craft.entries.section('Timeline') %}
         <li><a href="{{entry.url()}}">{{entry.titleText}}</a></li>
       {% endfor %}
@@ -25,15 +25,15 @@
       {% endfor %}
     </ul>
 
-    <ul class="navigation__social">
-      <li><a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a></li>
-      <li><a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a></li>
-      <li><a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a></li>
-      <li><a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a></li>
-    </ul>
+    <div class="global-navigation__social">
+      <a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a>
+      <a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a>
+      <a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a>
+      <a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a>
+    </div>
   </nav>
 
-  <div id="site__container">
+  <div id="site-container">
     {% block content %}
     {% endblock %}
   </div>
