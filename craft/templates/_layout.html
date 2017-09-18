@@ -6,38 +6,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-	{% includeCssFile "/assets/stylesheets/app.css" %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  {% includeCssFile "/assets/stylesheets/app.css" %}
 </head>
 
 <body>
-	<nav class="global__navigation">
-		<a href="/">Silent Sentinels</a>
-		<ul class="navigation__pages">
-			{% for entry in craft.entries.section('Timeline') %}
-				<li><a href="{{entry.url()}}">{{entry.titleText}}</a></li>
-			{% endfor %}
+  <nav class="global__navigation">
+    <a href="/">Silent Sentinels</a>
+    <ul class="navigation__pages">
+      {% for entry in craft.entries.section('Timeline') %}
+        <li><a href="{{entry.url()}}">{{entry.titleText}}</a></li>
+      {% endfor %}
 
-			{% for entry in craft.entries.section('Bios') %}
-				<li><a href="{{entry.url()}}">{{entry.title}}</a></li>
-			{% endfor %}
-		</ul>
+      {% for entry in craft.entries.section('Bios') %}
+        <li><a href="{{entry.url()}}">{{entry.title}}</a></li>
+      {% endfor %}
+    </ul>
 
-		<ul class="navigation__social">
-				<li><a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a></li>
-				<li><a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a></li>
-				<li><a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a></li>
-				<li><a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a></li>
-		</ul>
-	</nav>
+    <ul class="navigation__social">
+      <li><a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a></li>
+      <li><a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a></li>
+      <li><a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a></li>
+      <li><a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a></li>
+    </ul>
+  </nav>
 
-	<div id="site__container">
-			{% block content %}
-			{% endblock %}
-	</div>
+  <div id="site__container">
+    {% block content %}
+    {% endblock %}
+  </div>
 
-	{% include "_includes/footer.html" %}
+  {% include "_includes/footer.html" %}
 </body>
 </html>
