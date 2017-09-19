@@ -3,6 +3,19 @@
  # ---------------
  #}
 
+
+{% if craft.request.path == "" %}
+  {% set className = "home" %}
+{% endif %}
+
+{% if craft.request.path == "the-arrests" or craft.request.path == "woodrow-wilson-the-19th-amendment" or craft.request.path == "the-beginning-of-the-movement" or craft.request.path ==  "the-night-of-terror" %}
+  {% set className = "timeline" %}
+  {% elseif craft.request.path == "" %}
+    {% set className = "home" %}
+  {% else %}
+    {% set className = "page" %}
+{% endif %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -15,15 +28,12 @@
 <body>
   <nav class="global-navigation">
     <a href="/">Silent Sentinels</a>
-    <ul class="global-navigation__pages">
+    <div class="global-navigation__pages">
       {% for entry in craft.entries.section('Timeline') %}
-        <li><a href="{{entry.url()}}">{{entry.titleText}}</a></li>
+        <a href="{{entry.url()}}">{{entry.titleText}}</a>
       {% endfor %}
-
-      {% for entry in craft.entries.section('Bios') %}
-        <li><a href="{{entry.url()}}">{{entry.title}}</a></li>
-      {% endfor %}
-    </ul>
+        <a href="{{entry.url()}}">{{craft.entries.section('Bios').first().title}}</a>
+    </div>
 
     <div class="global-navigation__social">
       <a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a>
@@ -32,10 +42,13 @@
       <a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a>
     </div>
   </nav>
-
+  
   <div id="site-container">
-    {% block content %}
-    {% endblock %}
+    <main class="{{className}}">
+      {% block content %}
+
+      {% endblock %}
+    </main>
   </div>
 
   {% include "_includes/footer.html" %}

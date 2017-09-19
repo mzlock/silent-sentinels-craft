@@ -1,18 +1,17 @@
 {% extends "_layout" %}
 {% block content %}
-  <main class="timeline">
-      <header>
-        <h1>
-          <span>{{entry.leadIn}}</span>
-          {{ entry.titleText }}
-        </h1>
-        <p>{{entry.description}}</p>
-        <img src="{{ entry.image.first().url }}" alt="">
-      </header>
-
-        <ol>
-          <li><a href="{{ entry.sentinel.url() }}" style="background-image: url('{{ entry.image.first().getUrl }}')"><span>{entry.sentinel}</span></a></li>
-        </ol>
-  </main>
+<header>
+<div class="wysiwyg">
+  <h1>
+    <span>{{entry.leadIn}}</span>
+    {{ entry.titleText }}
+  </h1>
+  <p>{{entry.description}}</p>
+  <img src="{{ entry.image.first().url }}" alt="">
+</header>
+</div>
+  <ol>
+    <li><a href="{{ entry.sentinel.url() }}" style="background-image: url('{{ entry.image.first().getUrl }}')"><span>{entry.sentinel}</span></a></li>
+  </ol>
 
 {% endblock %}
