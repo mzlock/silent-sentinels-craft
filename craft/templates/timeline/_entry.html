@@ -1,23 +1,20 @@
 {% extends "_layout" %}
 {% block content %}
-  <main class="timeline">
-      <header>
-        <h1>
-          <span>{{entry.leadIn}}</span>
-          {{ entry.titleText }}
-        </h1>
-        <small>{{entry.date}}</small>
-        <img src="{{ entry.image.first().url }}" alt="">
-      </header>
+  <header>
+    <h1>
+      <span>{{entry.leadIn}}</span>
+      {{ entry.titleText }}
+    </h1>
+    <small>{{entry.date}}</small>
+    <img src="{{ entry.image.first().url }}" alt="">
+  </header>
+  {% if entry.timelineMatrix|length %}
+    {% for block in entry.timelineMatrix %}
 
-      {% if entry.timelineMatrix|length %}
-        {% for block in entry.timelineMatrix %}
+      {% set type = "" ~ block.type %}
+      {% include "_includes/" ~ cc2kc(type) %}
 
-          {% set type = "" ~ block.type %}
-          {% include "_includes/" ~ cc2kc(type) %}
-
-        {% endfor %}
-      {% endif %}
-  </main>
+    {% endfor %}
+  {% endif %}
 
 {% endblock %}
