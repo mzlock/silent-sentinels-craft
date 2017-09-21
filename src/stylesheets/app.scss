@@ -6,6 +6,7 @@
 
 @import "vendor/reset";
 @import "vendor/linear-gradient";
+@import "vendor/font-face";
 
 @import "build/variables";
 @import "build/functions";
@@ -20,7 +21,13 @@
 
 @import "components/footer";
 @import "components/nav";
+
+@import "components/matrix/timeline-block";
+@import "components/matrix/statement-and-image-block-split";
+@import "components/matrix/fact-full-bg";
+@import "components/matrix/quote-block";
 @import "components/matrix/statement-and-image-block-split";
 
 @import "pages/index";
 @import "pages/404";
+

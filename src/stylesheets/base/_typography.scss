@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Knewave|Montserrat:300,600');
+@import "../vendor/font-face";
+@include font-face('Norwester', '../fonts/norewester-webfont', italic, bold );
+
+$font-heading: 'Norwester', sans-serif;
+$font-body: 'Montserrat', sans-serif;
+$font-special: 'Knewave', cursive;
+
+body {
+  p {
+    font-family: $font-body;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+  }
+
+  blockquote {
+    font-family: $font-special;
+    span {
+      font-family: $font-heading;
+    }
+  }
+}

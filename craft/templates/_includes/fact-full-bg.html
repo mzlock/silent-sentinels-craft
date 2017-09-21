@@ -1,11 +1,9 @@
-<section class="timeline__block fact-image--full">
+<section class="timeline__block fact-image--full" style="background-color: {{block.colorSwatch.color}};">
   <div class="timeline__block__inner">
     <div class="fact-image--full__statement">
-      <h2>{{ block.fact }}</h2>
+      <h2>{{ block.fact | striptags('<strong><em><br>')|raw }}</h2>
       <p>{{ block.statement }}</p>
     </div>
-    <div class="fact-image--full__image-container">
-      <div class="fact-image--full__image-container__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
-    </div>
+    <div class="background__image fact-image--full__image-container__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
   </div>
 </section>

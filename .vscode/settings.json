@@ -1,0 +1,20 @@
+{
+  "window.zoomLevel": 1,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "editor.renderWhitespace": "all",
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "prettier.printWidth": 90,
+  "csscomb.formatOnSave": false,
+  "css.validate": true,
+  "scss.validate": true,
+  "html.format.enable": true,
+  "git.confirmSync": false,
+  "workbench.colorTheme": "Material Palenight",
+  "files.associations": {
+    "*.html": "twig"
+  }
+}

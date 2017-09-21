@@ -1,0 +1,44 @@
+.timeline__block {
+  position: relative;
+  
+  .timeline__block__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 600px;
+    padding-bottom: rem(40);
+    position: relative;
+    width: 100%;
+
+    h2,
+    p {
+      color: white;
+    }
+
+    @include breakpoint(max-width 800px) {
+      width: 100%;
+    }
+
+    @include breakpoint(max-width 1000px) {
+      min-height: 400px;
+    }
+  }
+}
+
+
+.background__image {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  &.quote-image__image-container__image {
+    background-position-x: 70%;
+    bottom: 0;
+  }
+
+  &.fact-image--full__image-container__image {
+    background-position-x: center;
+    top: 0;
+  }
+}

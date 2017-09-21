@@ -3,7 +3,6 @@
  # ---------------
  #}
 
-
 {% if craft.request.path == "" %}
   {% set className = "home" %}
 {% endif %}
@@ -46,7 +45,6 @@
   <div id="site-container">
     <main class="{{className}}">
       {% block content %}
-
       {% endblock %}
     </main>
   </div>

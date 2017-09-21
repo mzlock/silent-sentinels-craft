@@ -1,0 +1,14 @@
+// Megan Zlock
+@mixin font-face($name, $filename, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: "#{$name}";
+    font-style: $style;
+    font-weight: $weight;
+    src: url("#{$filename}.eot");
+    src:
+    local("#{$filename}.woff2") format("woff2"),
+    url("#{$filename}.woff2") format("woff2"),
+    local("#{$filename}.woff") format("woff"),
+    url("#{$filename}.woff") format("woff");
+  }
+}
