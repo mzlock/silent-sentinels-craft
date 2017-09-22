@@ -1,25 +1,25 @@
 .timeline__block {
   position: relative;
   
-  .timeline__block__inner {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-    min-height: 600px;
-    padding-bottom: rem(40);
-    position: relative;
-    width: 100%;
-
-    @include breakpoint(max-width 800px) {
-      width: 100%;
-    }
-
-    @include breakpoint(max-width 1000px) {
-      min-height: 400px;
-    }
-  }
 }
 
+.timeline__block__inner {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 600px;
+  padding-bottom: rem(40);
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(max-width 800px) {
+    width: 100%;
+  }
+
+  @include breakpoint(max-width 1000px) {
+    min-height: 400px;
+  }
+}
 
 .background__image {
   background-repeat: no-repeat;

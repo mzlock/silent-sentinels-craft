@@ -20,18 +20,15 @@
 
 
 .statement-image--split__text {
+  @include fluid-type(600px, 1200px, 16px, 18px);
+  font-weight: 300;
+  line-height: 1.6;
   margin-right: 10%;
   width: 50%;
 
   .heading-level-2 {
     @include fluid-type(600px, 1200px, 28px, 35px);
     margin-bottom: 1rem;
-  }
-
-  p {
-    @include fluid-type(600px, 1200px, 16px, 18px);
-    font-weight: 300;
-    line-height: 1.6;
   }
 
   @include breakpoint(max-width 1000px) {
@@ -53,12 +50,13 @@
     height: 100%;
     opacity: .5;
     position: absolute;
+    right: 0;
     top: 0;
     width: 100%;
   }
 }
 
-.item1--flip {
+.statement-flipped {
   order: 2;
 
   &.statement-image--split__text {
@@ -66,7 +64,7 @@
   }
 }
 
-.item2--flip {
+.background-flipped {
   margin-right: 10%;
   order: 1;
 }
