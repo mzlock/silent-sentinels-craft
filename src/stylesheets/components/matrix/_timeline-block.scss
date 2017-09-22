@@ -1,5 +1,32 @@
+.timeline {
+  header {
+    position: relative;
+    min-height: 850px;
+  }
+
+  .timeline__image {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-position-x: center;
+    top: 0;
+  }
+}
+
 .timeline__block {
   position: relative;
+  // .texture {
+  //   background-size: cover;
+  //   background-image: url(../images/noise.png);
+  //   position: relative;
+  //   top: 0;
+  //   z-index: 4;
+  //   opacity: 0.5;
+  //   height: 100%;
+  //   width: 100%;
+  // }
   
 }
 

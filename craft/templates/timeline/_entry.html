@@ -6,7 +6,8 @@
       {{ entry.titleText }}
     </h1>
     <small>{{entry.date}}</small>
-    <img src="{{ entry.image.first().url }}" alt="">
+
+    <div class="timeline__image" style="background-image: url('{{ entry.image.first().url }}')"></div>
   </header>
   {% if entry.timelineMatrix|length %}
     {% for block in entry.timelineMatrix %}

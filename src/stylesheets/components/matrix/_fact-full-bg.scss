@@ -32,7 +32,7 @@
 
   @include breakpoint(max-width 800px) {
     min-width: 300px;
-    padding-left: 3%;
+    padding: 10vh 3%;
     width: 100%;
 
     .heading-level-2,
