@@ -21,11 +21,9 @@
 
 .statement-image--split__text {
   margin-right: 10%;
-  max-width: 470px;
-  min-width: 300px;
   width: 50%;
 
-  h2 {
+  .heading-level-2 {
     @include fluid-type(600px, 1200px, 28px, 35px);
     margin-bottom: 1rem;
   }

@@ -3,10 +3,12 @@
 
   .timeline__block__inner {
     align-content: center;
+    display: flex;
     justify-content: center;
     padding: rem(115) 0;
 
     blockquote {
+      @include fluid-type(600px, 1400px, 18px, 25px);
       color: white;
       display: flex;
       flex-direction: column;
@@ -21,42 +23,15 @@
       z-index: 1;
 
       @include breakpoint(max-width 800px) {
-        max-width: 100%;
-        min-width: 300px;
-
         .leads {
           line-height: 1.5;
           width: 100%;
         }
       }
 
-      @include fluid-type(600px, 1400px, 18px, 25px);
-
       @include breakpoint(max-width 800px) {
         width: 100%;
       }
-    }
-
-    .leads {
-      display: block;
-      width: percentage(430/720);
-
-      align-self: center;
-
-      p {
-        font-family: $font-heading;
-      }
-    }
-
-    span.quote-image__main {
-      @include fluid-type(600px, 1400px, 48px, 55px);
-      background-color: white;
-      color: color(darkPurple);
-      display: block;
-      font-family: $font-special;
-      margin: rem(25) 0;
-      padding: rem(25) rem(50) rem(40);
-      width: 100%;
     }
 
     @include breakpoint(max-width 800px) {
@@ -65,20 +40,26 @@
   }
 }
 
+.quote-image__main {
+  @include fluid-type(600px, 1400px, 48px, 55px);
+  background-color: white;
+  color: color(darkPurple);
+  display: block;
+  font-family: $font-special;
+  margin: rem(25) 0;
+  padding: rem(25) rem(50) rem(40);
+  width: 100%;
+}
+
 .quote-image__attribution,
 .quote-image__context {
   @include fluid-type(600px, 1400px, 16px, 18px);
-
   display: block;
-  font-family: $font-body;
 }
 
 .leads {
   align-self: center;
   display: block;
+  font-family: $font-heading;
   width: percentage(430/720);
-
-  p {
-    font-family: $font-heading;
-  }
 }

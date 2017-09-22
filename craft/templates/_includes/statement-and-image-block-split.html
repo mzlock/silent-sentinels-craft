@@ -1,18 +1,12 @@
-{% if block.flip == 1 %}
-  {% set className1 = "item1--flip" %}
-  {% set className2 = "item2--flip" %}
-
-  {% else %}
-    {% set className1 = "" %}
-    {% set className2 = "" %}
-{% endif %}
+{% set statementClass = block.flip == 1 ? "item1--flip" : "" %}
+{% set backgroundClass = block.flip == 1 ? "item2--flip" : "" %}
 
 <section class="timeline__block statement-image--split" style="background-color: {{block.colorSwatch.color}};">
   <div class="timeline__block__inner">
-    <div class="statement-image--split__text {{className1}}">
-      <h2>{{ block.blockTitle }}</h2>
+    <div class="statement-image--split__text {{statementClass}}">
+      <h2 class="heading-level-2">{{ block.blockTitle }}</h2>
       <p>{{ block.statement }}</p>
     </div>
-    <div class="statement-image--split__image-container__image {{className2}}" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="statement-image--split__image-container__image {{backgroundClass}}" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
   </div>
 </section>
