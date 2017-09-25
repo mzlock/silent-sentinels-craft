@@ -17,40 +17,27 @@
 
 .timeline__block {
   position: relative;
-  // .texture {
-  //   background-size: cover;
-  //   background-image: url(../images/noise.png);
-  //   position: relative;
-  //   top: 0;
-  //   z-index: 4;
-  //   opacity: 0.5;
-  //   height: 100%;
-  //   width: 100%;
-  // }
-  
 }
 
 .timeline__block__inner {
+  @include wrapper();
+
   color: white;
   display: flex;
   flex-wrap: nowrap;
   min-height: 600px;
-  padding-bottom: rem(40);
   position: relative;
   width: 100%;
 
-  @include breakpoint(max-width 800px) {
-    width: 100%;
-  }
-
   @include breakpoint(max-width 1000px) {
     min-height: 400px;
+    padding: rem(100) 0.5rem;
   }
 }
 
 .background__image {
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: cover;
   height: 100%;
   position: absolute;
   width: 100%;

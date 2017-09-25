@@ -4,7 +4,6 @@
       <h2 class="heading-level-2">{{ block.fact | striptags('<strong><em><br>')|raw }}</h2>
       <p>{{ block.statement }}</p>
     </div>
-    <div class="background__image fact-image--full__image-container__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
   </div>
-  <div class="texture"></div>
+  <div class="background__image fact-image--full__image-container__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
 </section>

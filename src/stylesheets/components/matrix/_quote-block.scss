@@ -50,6 +50,10 @@
   margin: rem(25) 0;
   padding: rem(25) rem(50) rem(40);
   width: 100%;
+
+  @include breakpoint(max-width 1200px) {
+    padding: 5%;
+  }
 }
 
 .quote-image__attribution,
