@@ -1,0 +1,23 @@
+<nav class="global-navigation">
+  <div class="global-navigation__inner">
+    <svg class="global-navigation__icon-menu mobile-only" width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><g id="icon-menu" fill="none" fill-rule="evenodd"><g id="icon-menu" fill="#FFF"><path id="bottom" d="M0 24h36v-4H0z"/><path id="middle" d="M0 14h36v-4H0z"/><path id="top" d="M0 0v4h36V0z"/></g></g></svg>
+    <a href="/" class="global-navigation__inner__site-logo"><img src="../assets/images/logo-silentsentinels-1x.png" alt="Silent Sentinels - Home"/></a>
+    <div class="container">
+      <div class="global-navigation__inner__wrapper">
+        <div class="global-navigation__inner__pages">
+          {% for entry in craft.entries.section('Timeline') %}
+            <a href="{{entry.url()}}">{{entry.titleText}}</a>
+          {% endfor %}
+          <a href="{{entry.url()}}">{{craft.entries.section('Bios').first().title}}</a>
+        </div>
+
+        <div class="global-navigation__inner__social">
+          <a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a>
+          <a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a>
+          <a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a>
+          <a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

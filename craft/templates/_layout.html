@@ -25,23 +25,8 @@
 </head>
 
 <body>
-  <nav class="global-navigation">
-    <a href="/">Silent Sentinels</a>
-    <div class="global-navigation__pages">
-      {% for entry in craft.entries.section('Timeline') %}
-        <a href="{{entry.url()}}">{{entry.titleText}}</a>
-      {% endfor %}
-        <a href="{{entry.url()}}">{{craft.entries.section('Bios').first().title}}</a>
-    </div>
+  {% include "_includes/navigation.html" %}
 
-    <div class="global-navigation__social">
-      <a href=""><img src="{{socialMedia.image1.first().getUrl()}}" alt="{{socialMedia.social1}}">{{socialMedia.social1}}</a>
-      <a href=""><img src="{{socialMedia.image2.first().getUrl()}}" alt="{{socialMedia.social2}}">{{socialMedia.social2}}</a>
-      <a href=""><img src="{{socialMedia.image3.first().getUrl()}}" alt="{{socialMedia.social3}}">{{socialMedia.social3}}</a>
-      <a href=""><img src="{{socialMedia.image4.first().getUrl()}}" alt="{{socialMedia.social4}}">{{socialMedia.social4}}</a>
-    </div>
-  </nav>
-  
   <div id="site-container">
     <main class="{{className}}">
       {% block content %}
