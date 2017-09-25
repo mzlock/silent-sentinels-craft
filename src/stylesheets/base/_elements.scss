@@ -32,3 +32,13 @@ svg {
 html {
   overflow-x: hidden;
 }
+
+.mobile-only {
+  @include breakpoint(min-width 600px) {
+    display: none;
+  }
+}
+
+.menu-present {
+  transform: translateX(100%);
+}
