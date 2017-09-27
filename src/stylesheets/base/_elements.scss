@@ -34,7 +34,7 @@ html {
 }
 
 .mobile-only {
-  @include breakpoint(min-width 600px) {
+  @include breakpoint(min-width 900px) {
     display: none;
   }
 }
