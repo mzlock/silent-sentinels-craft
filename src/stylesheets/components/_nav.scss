@@ -13,7 +13,6 @@
       position: fixed;
       right: 0;
       top: 0;
-      transition: all 0.3s ease;
       transform: translateX(100%);
       width: 100%;
       z-index: 11;
@@ -55,6 +54,10 @@
     .menu--active {
       transform: translateX(0);
     }
+
+    .menu--transition {
+      transition: transform 0.3s ease;
+    }
   }
 
   @include breakpoint(min-width 900px) {
@@ -83,6 +86,7 @@
     justify-content: space-between;
 
     a {
+      color: color(orange);
       @include breakpoint(max-width 500px) {
         align-items: center;
         display: flex;
@@ -118,6 +122,12 @@
       }
     }
 
+    @include breakpoint(min-width 2400px) {
+      a {
+        color: white;
+      }
+    }
+
     @include breakpoint(900px 2400px) {
       background-color: white;
       border-top-left-radius: 4px;
@@ -148,7 +158,7 @@
 }
 
 .global-navigation__inner__wrapper {
-  color: white;
+  color: color(orange);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -181,7 +191,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  @include breakpoint(min-width 900px) {
+  @include breakpoint(min-width 500px) {
     a,
     a img {
       margin-right: 1rem;

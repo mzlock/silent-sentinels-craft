@@ -9,6 +9,11 @@
   width: 1px;
 }
 
+.menu--overflow{
+  overflow: hidden;
+  max-height: 100vh;
+}
+
 @mixin wrapper {
   margin: 0 auto;
   
