@@ -3,7 +3,8 @@
   @return #{$size}rem;
 }
 
-@function multiBase($num) {
+@function spacingAgainstBase($num) {
+  $base: 18px;
   @return $num * $base;
 }
 
