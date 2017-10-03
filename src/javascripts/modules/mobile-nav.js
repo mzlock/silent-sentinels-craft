@@ -11,7 +11,6 @@ menuTrigger.addEventListener('click', () => {
   if (menuContainer.classList.contains('menu--active')) {
     nav.setAttribute('aria-expanded', 'true');
   }
-
   else {
     nav.setAttribute('aria-expanded', 'false');
   }
