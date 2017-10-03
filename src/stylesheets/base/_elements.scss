@@ -33,12 +33,14 @@ html {
   overflow-x: hidden;
 }
 
-.mobile-only {
-  @include breakpoint(min-width 900px) {
+@include breakpoint(min-width 1200px) {
+  #mobile-only {
     display: none;
   }
 }
 
-.menu-present {
-  transform: translateX(100%);
+@include breakpoint(max-width 1200px) {
+  #desktop-only {
+    display: none;
+  }
 }

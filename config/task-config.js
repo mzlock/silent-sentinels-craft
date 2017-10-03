@@ -17,7 +17,7 @@ module.exports = {
 
   browserSync: {
     // Update this to match your development URL
-    proxy: 'localhost',
+    proxy: 'silentsentinel.dev',
     files: ['craft/templates/**/*']
   },
 
