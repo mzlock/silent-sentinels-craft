@@ -7,7 +7,7 @@
   "editor.renderWhitespace": "all",
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
-  "prettier.printWidth": 90,
+  "prettier.printWidth": 100,
   "csscomb.formatOnSave": false,
   "css.validate": true,
   "scss.validate": true,

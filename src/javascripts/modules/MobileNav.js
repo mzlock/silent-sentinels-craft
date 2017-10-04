@@ -3,53 +3,41 @@ export default class MobileNav {
     this.el = el
     this.setupDOM()
     this.bindEvents()
-    this.sizeEvent()
-    this.checkInitialWidth()
+    this.shouldHide()
   }
 
   setupDOM() {
     this.menuTrigger = this.el.querySelector('.global-navigation__icon-menu')
     this.menuContainer = this.el.querySelector('.global-navigation__inner')
+    this.menuContainer.classList.add('menu--transition')
     this.htmlElement = document.querySelector('html')
 
-    this.htmlElement.setAttribute('data-js', 'hasJs')
-    this.menuContainer.classList.add('menu--transition')
+    this.breakpoint = 1200
+    this.viewportWidth = document.documentElement.clientWidth
+    this.isOpen = this.viewportWidth > this.breakpoint ? true : false
   }
 
   bindEvents() {
-    this.menuTrigger.addEventListener('click', this.clickEvent.bind(this))
+    this.menuTrigger.addEventListener('click', this.onClick.bind(this))
+    window.addEventListener('resize', this.onResize.bind(this))
   }
 
-  clickEvent() {
-    this.menuContainer.classList.toggle('menu--active')
-    this.htmlElement.classList.toggle('menu--overflow')
+  onClick() {
+    this.isOpen = !this.isOpen
+    this.menuContainer.classList.toggle('menu--active', this.isOpen)
+    this.htmlElement.classList.toggle('menu--overflow', this.isOpen)
+    this.menuTrigger.setAttribute('aria-expanded', this.isOpen)
 
-    if (this.menuContainer.classList.contains('menu--active')) {
-      this.menuTrigger.setAttribute('aria-expanded', 'true')
-    } else {
-      this.menuTrigger.setAttribute('aria-expanded', 'false')
-    }
+    this.shouldHide()
   }
 
-  checkInitialWidth() {
-    if (document.documentElement.clientWidth < 900) {
-      this.menuContainer.setAttribute('aria-hidden', 'true')
-    }
+  onResize() {
+    this.viewportWidth = document.documentElement.clientWidth
+    this.shouldHide()
   }
 
-  sizeEvent() {
-    window.addEventListener('resize', () => {
-      if (
-        document.documentElement.clientWidth < 900 &&
-        this.menuContainer.getAttribute('aria-expanded') != 'true'
-      ) {
-        this.menuContainer.setAttribute('aria-hidden', 'true')
-      } else if (
-        document.documentElement.clientWidth > 900 &&
-        this.menuContainer.getAttribute('aria-expanded') != 'true'
-      ) {
-        this.menuContainer.setAttribute('aria-hidden', 'false')
-      }
-    })
+  shouldHide() {
+    let ariaHidden = this.viewportWidth < this.breakpoint && !this.isOpen ? 'true' : 'false'
+    this.menuContainer.setAttribute('aria-hidden', ariaHidden)
   }
 }

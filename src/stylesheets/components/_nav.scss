@@ -10,7 +10,7 @@
   display: flex;
 }
 
-@include breakpoint(min-width 1200px) {
+@include breakpoint(min-width 1201px) {
   .global-navigation {
     display: flex;
     flex-wrap: nowrap;
@@ -37,7 +37,8 @@
       text-decoration: none;
       text-transform: uppercase;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         text-decoration: underline;
       }
     }
@@ -56,103 +57,102 @@
 }
 
 @include breakpoint(max-width 1200px) {
-  html[data-js="hasJs"] {
-  .global-navigation {
-    &.wrapper {
-      padding: 0;
+  html[data-js='hasJs'] {
+    .global-navigation {
+      &.wrapper {
+        padding: 0;
+      }
     }
-  }
 
-  .global-navigation__header {
-    background-color: white;
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
-    position: relative;
-    left: 0;
-    width: 100%;
-    z-index: 12;
-
-    button {
-      align-self: center;
-      cursor: pointer;
-      flex: 0 0 10%;
+    .global-navigation__header {
+      background-color: white;
+      display: flex;
+      height: 50px;
+      justify-content: space-between;
+      position: relative;
+      left: 0;
+      width: 100%;
       z-index: 12;
-    }
-  }
 
-  .global-navigation__icon-menu {
-    background-color: transparent;
-    border: 0;
-    position: absolute;
-    right: 20px;
-  }
-
-  .global-navigation__inner {
-    background-color: color(darkPurple);
-    flex-direction: column;
-    justify-content: center;
-    left: 0;
-    min-height: calc(100vh - 50px);
-    position: absolute;
-    top: -100vh;
-    width: 100vw;
-    z-index: 3;
-  }
-
-  .global-navigation__inner__site-logo {
-    background-color: color(purple);
-  }
-
-  .global-navigation__inner__pages {
-    a {
-      display: block;
-      text-align: center;
-    }
-  }
-
-  .menu--active {
-    transform: translate(0, calc(100vh + 50px));
-    
-  }
-  
-  .menu--transition {
-    transition: transform 0.3s ease;
-  }
-
-  .global-navigation__inner__social {
-    background-color: white;
-    justify-content: space-around;
-    padding: 0.5rem;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    z-index: 10;
-
-    a {
-      color: color(orange);
-      text-decoration: none;
-      transition: all 0.2s ease;
-
-      &:hover, &:focus {
-        text-decoration: underline;
+      button {
+        align-self: center;
+        cursor: pointer;
+        flex: 0 0 10%;
+        z-index: 12;
       }
+    }
 
-      img {
+    .global-navigation__icon-menu {
+      background-color: transparent;
+      border: 0;
+      position: absolute;
+      right: 20px;
+    }
+
+    .global-navigation__inner {
+      background-color: color(darkPurple);
+      flex-direction: column;
+      justify-content: center;
+      left: 0;
+      min-height: calc(100vh - 50px);
+      position: absolute;
+      top: -100vh;
+      width: 100vw;
+      z-index: 3;
+    }
+
+    .global-navigation__inner__site-logo {
+      background-color: color(purple);
+    }
+
+    .global-navigation__inner__pages {
+      a {
         display: block;
-        margin: 0 auto;
-        max-width: 30px;
-        padding-bottom: 0.5rem;
+        text-align: center;
       }
+    }
 
-      span {
-        display: block;
-        margin: 0 auto;
+    .menu--active {
+      transform: translate(0, calc(100vh + 50px));
+    }
+
+    .menu--transition {
+      transition: transform 0.3s ease;
+    }
+
+    .global-navigation__inner__social {
+      background-color: white;
+      justify-content: space-around;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      z-index: 10;
+
+      a {
+        color: color(orange);
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+          max-width: 30px;
+          padding-bottom: 0.5rem;
+        }
+
+        span {
+          display: block;
+          margin: 0 auto;
+        }
       }
     }
   }
-}
-
 }
 
 @include breakpoint(max-width 500px) {
@@ -166,7 +166,6 @@
     }
   }
 }
-
 
 .home__links {
   @include fluid-type(600px, 1400px, 28px, 65px);
