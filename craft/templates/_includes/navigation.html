@@ -1,9 +1,12 @@
-<nav class="global-navigation wrapper" id="global-navigation" aria-label="Main Navigation" aria-expanded="false">
+<nav class="global-navigation wrapper" aria-label="Main Navigation" data-module="MobileNav">
   <div class="global-navigation__header">
     <a href="/" class="global-navigation__inner__site-logo"><img src="../assets/images/logo-silentsentinels-1x.png" alt="Silent Sentinels - Home"/></a>
-    <button class="global-navigation__icon-menu" id="mobile-only" aria-controls="global-navigation"><svg width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><g id="icon-menu" fill="none" fill-rule="evenodd"><g id="icon-menu" fill="#372646"><path id="bottom" d="M0 24h36v-4H0z"/><path id="middle" d="M0 14h36v-4H0z"/><path id="top" d="M0 0v4h36V0z"/></g></g></svg></button>
+    <button class="global-navigation__icon-menu" id="mobile-only" aria-controls="global-navigation" aria-expanded="false">
+      <svg width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><g id="icon-menu" fill="none" fill-rule="evenodd"><g id="icon-menu" fill="#372646"><path id="bottom" d="M0 24h36v-4H0z"/><path id="middle" d="M0 14h36v-4H0z"/><path id="top" d="M0 0v4h36V0z"/></g></g></svg>
+      <span class="screenreader-only">menu</span>
+    </button>
   </div>
-  <div class="global-navigation__inner">
+  <div class="global-navigation__inner" id="global-navigation">
     <div class="global-navigation__inner__pages" id="desktop-only">
       {% for entry in craft.entries.section('Timeline') %}
         <a href="{{entry.url()}}">{{entry.titleText}}</a>
@@ -26,3 +29,4 @@
     </div>
   </div>
 </nav>
+

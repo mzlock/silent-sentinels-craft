@@ -56,6 +56,7 @@
 }
 
 @include breakpoint(max-width 1200px) {
+  html[data-js="hasJs"] {
   .global-navigation {
     &.wrapper {
       padding: 0;
@@ -150,6 +151,8 @@
       }
     }
   }
+}
+
 }
 
 @include breakpoint(max-width 500px) {
