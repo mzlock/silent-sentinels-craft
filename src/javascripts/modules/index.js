@@ -29,3 +29,30 @@ for (var i = 0; i < moduleElements.length; i++) {
     }
   }
 */
+
+const quotations = [...document.querySelectorAll('.museum__quote')]
+
+let quoteList
+
+function quoteFunct(item) {
+  return (quoteList = item.classList)
+}
+
+function hiding(item) {
+  let quoteItem = quoteFunct(item)
+  quoteItem.remove('isHiding')
+}
+
+function add(item) {
+  let quoteItem = quoteFunct(item)
+  quoteItem.add('isHiding')
+}
+
+quotations.map(quote => {
+  quote.addEventListener('click', () => {
+    quotations.forEach(quote => {
+      hiding(quote)
+    })
+    add(quote)
+  })
+})

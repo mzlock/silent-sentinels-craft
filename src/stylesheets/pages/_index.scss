@@ -1,0 +1,255 @@
+.home {
+  header {
+    align-items: center;
+    background-color: color(orange);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    small {
+      display: block;
+      @include fluid-type(600px, 1400px, 20px, 24px);
+      font-family: $font-special;
+      flex: 0 0 35%;
+      line-height: 1.2;
+      min-width: 250px;
+      transform: rotate(-2deg);
+      margin-bottom: rem(20);
+    }
+
+    span {
+      display: block;
+    }
+
+    .heading-level-1 {
+      margin-bottom: rem(48);
+    }
+
+    p {
+      @include fluid-type(600px, 1400px, 14px, 16px);
+      font-family: $font-body;
+      line-height: 1.5;
+      min-width: 300px;
+    }
+  }
+
+  .background__image {
+    display: none;
+  }
+
+  .heading-level-2 {
+    @include fluid-type(600px, 1000px, 56px, 125px);
+    margin-bottom: spacingAgainstBase(1);
+  }
+}
+
+.home__header__inner {
+  max-width: 650px;
+
+  small {
+    align-self: flex-start;
+  }
+
+  p {
+    max-width: 572px;
+    margin-left: percentage(30/800);
+    margin-bottom: rem(32);
+  }
+
+  @include breakpoint(min-width 900px) {
+    // width: percentage(800/2000);
+
+    p {
+      margin-left: percentage(100/800);
+    }
+  }
+}
+
+.home__navigation {
+  background-color: color(turqoise);
+
+  .home__links {
+    padding-bottom: 3vh;
+    padding-top: 4vh;
+
+    a {
+      @include fluid-type(600px, 1400px, 46px, 65px);
+      display: block;
+      margin: 0 auto 2vh auto;
+      max-width: 800px;
+      text-align: center;
+    }
+  }
+}
+
+.home__who {
+  background-color: color(teal);
+  color: white;
+
+  small {
+    display: block;
+    @include fluid-type(600px, 1400px, 20px, 24px);
+    font-family: $font-special;
+    flex: 0 0 35%;
+    line-height: 1.2;
+    min-width: 250px;
+    transform: rotate(-2deg);
+    margin-bottom: rem(20);
+  }
+
+  span {
+    display: block;
+  }
+
+  p {
+    @include fluid-type(600px, 1400px, 14px, 16px);
+    font-family: $font-body;
+    line-height: 1.5;
+    min-width: 300px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    max-width: 470px;
+    justify-content: space-between;
+    margin-left: 12.5%;
+    align-self: flex-end;
+    margin-bottom: spacingAgainstBase(1);
+
+    a {
+      border: 4px solid color(yellow);
+      color: color(yellow);
+      padding: 10px 25px;
+      @include fluid-type(600px, 1400px, 16px, 20px);
+      font-family: $font-heading;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.home__who__inner__text {
+  max-width: 600px;
+  margin: 0 auto;
+
+  p {
+    max-width: 470px;
+    margin-left: percentage(30/800);
+    margin-bottom: rem(32);
+  }
+
+  @include breakpoint(min-width 900px) {
+    p {
+      margin-left: percentage(100/800);
+    }
+  }
+}
+
+//
+@include breakpoint(max-width 1000px) {
+  .home__who {
+    margin: 0 auto;
+    small {
+      display: block;
+      @include fluid-type(600px, 1400px, 20px, 24px);
+      font-family: $font-special;
+      flex: 0 0 35%;
+      line-height: 1.2;
+      min-width: 250px;
+      transform: rotate(-2deg);
+      margin-bottom: rem(20);
+    }
+
+    p {
+      @include fluid-type(600px, 1400px, 14px, 16px);
+      font-family: $font-body;
+      line-height: 1.5;
+      margin-left: 0;
+      min-width: 300px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      max-width: 100%;
+      justify-content: space-between;
+      margin-left: 0;
+      align-self: flex-end;
+      margin: 0 auto;
+      margin-bottom: spacingAgainstBase(1);
+
+      a {
+        border: 4px solid color(yellow);
+        color: color(yellow);
+        padding: 10px 25px;
+        @include fluid-type(600px, 1400px, 16px, 20px);
+        font-family: $font-heading;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// to utilities and beyond! -Buzzed LightBeer
+.section-padding {
+  padding-bottom: 12vh;
+  padding-top: 18vh;
+}
+
+.isHiding {
+  color: red;
+}
+// end utilities
+
+.home__quote {
+  @include fluid-type(600px, 1400px, 24px, 33px);
+  background-color: color(purple);
+  padding: spacingAgainstBase(6) 0 spacingAgainstBase(4) 0;
+}
+
+.home__quote__inner {
+  color: white;
+  max-width: 680px;
+  line-height: 1.3;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(3deg);
+  right: -10%;
+
+  span {
+    color: color(yellow);
+    display: block;
+    font-family: $font-special;
+    margin: 2vh auto;
+  }
+
+  cite {
+    display: block;
+    margin: 5vh 0 0 0;
+    transform: rotate(-3deg);
+    font-family: $font-body;
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.home__campaign-museum {
+  background-color: color(turqoise);
+  color: white;
+}
+
+.home__campaign-museum__wrapper__text {
+  max-width: 800px;
+  margin: 0 auto;
+
+  p {
+    max-width: 560px;
+    line-height: 1.6;
+  }
+}

@@ -13,7 +13,7 @@ return array(
 	/**
 	 * The database server name or IP address. Usually 'localhost' or '127.0.0.1'.
 	 */
-	'server' => 'localhost',
+	'server' => 'silentsentinel.dev',
 
 	/**
 	 * The database server port.
