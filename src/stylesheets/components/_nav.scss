@@ -98,6 +98,10 @@
       border: 0;
       position: absolute;
       right: 20px;
+
+      path {
+        fill: color(purple);
+      }
     }
 
     .global-navigation__inner {

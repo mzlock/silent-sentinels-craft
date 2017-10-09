@@ -25,12 +25,21 @@
   &.wrapper--medium {
     max-width: 960px;
   }
-  
+
   &.wrapper--medium-alternate {
     max-width: 780px;
   }
-  
+
   &.wrapper--small {
     max-width: 740px;
   }
+}
+
+.section-padding {
+  padding-bottom: 12vh;
+  padding-top: 18vh;
+}
+
+.isHiding {
+  color: red;
 }

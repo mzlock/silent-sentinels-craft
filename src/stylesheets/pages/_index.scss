@@ -195,17 +195,6 @@
   }
 }
 
-// to utilities and beyond! -Buzzed LightBeer
-.section-padding {
-  padding-bottom: 12vh;
-  padding-top: 18vh;
-}
-
-.isHiding {
-  color: red;
-}
-// end utilities
-
 .home__quote {
   @include fluid-type(600px, 1400px, 24px, 33px);
   background-color: color(purple);
@@ -239,6 +228,8 @@
   }
 }
 
+// refactor
+
 .home__campaign-museum {
   background: linear-gradient(180deg, color(turqoise), color(purple));
   color: white;
@@ -252,6 +243,53 @@
     max-width: 560px;
     line-height: 1.6;
   }
+}
+
+.museum__quote blockquote {
+  @include fluid-type(600px, 1400px, 24px, 27px);
+  background-color: white;
+  color: color(orange);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  padding: spacingAgainstBase(3) spacingAgainstBase(3) spacingAgainstBase(6) spacingAgainstBase(3);
+  text-transform: uppercase;
+  position: relative;
+
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    border-color: rgba(213, 213, 213, 0);
+    border-top-color: white;
+    border-width: 30px;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    margin-left: -30px;
+  }
+
+  span {
+    color: color(purple);
+    font-family: $font-special;
+  }
+}
+.home__campaign-museum__quotes__quote__cite {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: spacingAgainstBase(3) auto spacingAgainstBase(8) auto;
+}
+
+.home__campaign-museum__quotes__quote__cite__person {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+}
+
+.home__campaign-museum__quotes__quote--hidden {
+  display: none;
 }
 
 .home__campaign-museum__purpose {
@@ -285,22 +323,6 @@
     max-width: 420px;
     margin: 0 0 spacingAgainstBase(2) 0;
   }
-
-  img {
-    position: absolute;
-
-    width: 40%;
-
-    &:first-of-type {
-      top: 5%;
-      right: -35%;
-    }
-
-    &:nth-of-type(2) {
-      bottom: 5%;
-      right: -35%;
-    }
-  }
 }
 
 .home__campaign-museum__ambassadors {
@@ -312,5 +334,26 @@
     float: left;
     width: 50%;
     margin-bottom: spacingAgainstBase(1.5);
+  }
+}
+
+@include breakpoint(min-width 1600px) {
+  .home__campaign-museum__purpose {
+    margin: 0 0;
+
+    img {
+      position: absolute;
+      width: 40%;
+
+      &:first-of-type {
+        top: 5%;
+        right: -35%;
+      }
+
+      &:nth-of-type(2) {
+        bottom: 15%;
+        right: -35%;
+      }
+    }
   }
 }
