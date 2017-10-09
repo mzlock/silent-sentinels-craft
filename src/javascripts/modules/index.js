@@ -31,7 +31,6 @@ for (var i = 0; i < moduleElements.length; i++) {
 */
 
 const quotations = [...document.querySelectorAll('.museum__quote')]
-
 let quoteList
 
 function quoteFunct(item) {

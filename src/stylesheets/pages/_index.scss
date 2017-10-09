@@ -40,7 +40,7 @@
 
   .heading-level-2 {
     @include fluid-type(600px, 1000px, 56px, 125px);
-    margin-bottom: spacingAgainstBase(1);
+    margin-bottom: spacingAgainstBase(2);
   }
 }
 
@@ -84,7 +84,7 @@
 }
 
 .home__who {
-  background-color: color(teal);
+  background: linear-gradient(180deg, color(turqoise), color(teal));
   color: white;
 
   small {
@@ -240,16 +240,77 @@
 }
 
 .home__campaign-museum {
-  background-color: color(turqoise);
+  background: linear-gradient(180deg, color(turqoise), color(purple));
   color: white;
 }
 
 .home__campaign-museum__wrapper__text {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto spacingAgainstBase(3);
 
   p {
     max-width: 560px;
     line-height: 1.6;
+  }
+}
+
+.home__campaign-museum__purpose {
+  background-color: white;
+  color: color(purple);
+  max-width: 670px;
+  padding: spacingAgainstBase(3) spacingAgainstBase(2);
+  position: relative;
+
+  .heading-level-3 {
+    @include fluid-type(600px, 1400px, 18px, 20px);
+    margin-bottom: spacingAgainstBase(2);
+    text-transform: uppercase;
+  }
+
+  hr {
+    border-color: #c9d9de;
+    left: 0;
+  }
+
+  p {
+    line-height: 1.5;
+
+    &:last-of-type {
+      margin: 0 0 spacingAgainstBase(4) 0;
+    }
+  }
+
+  hr,
+  p {
+    max-width: 420px;
+    margin: 0 0 spacingAgainstBase(2) 0;
+  }
+
+  img {
+    position: absolute;
+
+    width: 40%;
+
+    &:first-of-type {
+      top: 5%;
+      right: -35%;
+    }
+
+    &:nth-of-type(2) {
+      bottom: 5%;
+      right: -35%;
+    }
+  }
+}
+
+.home__campaign-museum__ambassadors {
+  ul {
+    @include clearfix();
+  }
+
+  li {
+    float: left;
+    width: 50%;
+    margin-bottom: spacingAgainstBase(1.5);
   }
 }
