@@ -33,6 +33,14 @@
   &.wrapper--small {
     max-width: 740px;
   }
+
+  &.wrapper--xsmall {
+    max-width: 560px;
+  }
+
+  &.wrapper--footer__section {
+    max-width: 300px;
+  }
 }
 
 .section-padding {
@@ -40,6 +48,6 @@
   padding-top: 18vh;
 }
 
-.isHiding {
-  color: red;
+.is-hiding {
+  display: none;
 }

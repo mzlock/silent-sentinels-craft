@@ -44,3 +44,42 @@ html {
     display: none;
   }
 }
+
+.heading-lead {
+  display: block;
+  @include fluid-type(600px, 1400px, 20px, 24px);
+  font-family: $font-special;
+  flex: 0 0 35%;
+  line-height: 1.2;
+  min-width: 250px;
+  transform: rotate(-2deg);
+  margin-bottom: rem(20);
+}
+
+.component-links {
+  @include fluid-type(600px, 1400px, 28px, 65px);
+  text-align: center;
+
+  a {
+    border: 0.5rem solid white;
+    color: white;
+    font-family: $font-heading;
+    margin: 0 auto 2vh auto;
+    padding: 3vh 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background-color: white;
+      border: 0.5rem solid white;
+      color: color(darkPurple);
+      text-decoration: none;
+    }
+  }
+
+  @include breakpoint(max-width 1200px) {
+    max-width: 600px;
+  }
+}

@@ -7,22 +7,11 @@
     flex-direction: column;
     justify-content: center;
 
-    small {
-      display: block;
-      @include fluid-type(600px, 1400px, 20px, 24px);
-      font-family: $font-special;
-      flex: 0 0 35%;
-      line-height: 1.2;
-      min-width: 250px;
-      transform: rotate(-2deg);
-      margin-bottom: rem(20);
-    }
-
     span {
       display: block;
     }
 
-    .heading-level-1 {
+    .h1 {
       margin-bottom: rem(48);
     }
 
@@ -38,7 +27,7 @@
     display: none;
   }
 
-  .heading-level-2 {
+  .h2 {
     @include fluid-type(600px, 1000px, 56px, 125px);
     margin-bottom: spacingAgainstBase(2);
   }
@@ -47,10 +36,6 @@
 .home__header__inner {
   max-width: 650px;
 
-  small {
-    align-self: flex-start;
-  }
-
   p {
     max-width: 572px;
     margin-left: percentage(30/800);
@@ -58,8 +43,6 @@
   }
 
   @include breakpoint(min-width 900px) {
-    // width: percentage(800/2000);
-
     p {
       margin-left: percentage(100/800);
     }
@@ -69,14 +52,14 @@
 .home__navigation {
   background-color: color(turqoise);
 
-  .home__links {
+  .component-links {
     padding-bottom: 3vh;
-    padding-top: 4vh;
+    padding-top: 10vh;
 
     a {
       @include fluid-type(600px, 1400px, 46px, 65px);
       display: block;
-      margin: 0 auto 2vh auto;
+      margin: 0 auto spacingAgainstBase(2) auto;
       max-width: 800px;
       text-align: center;
     }
@@ -107,6 +90,31 @@
     font-family: $font-body;
     line-height: 1.5;
     min-width: 300px;
+
+    a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      &:hover,
+      &:focus {
+        &:after {
+          border-bottom: 5px solid color(orange);
+          transform: translate(-50%, 3px);
+        }
+      }
+
+      &:after {
+        border-bottom: 2px solid color(orange);
+        position: absolute;
+        content: ' ';
+        bottom: 0;
+        transform: translateX(-50%);
+        left: 50%;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+    }
   }
 
   nav {
@@ -151,16 +159,6 @@
 @include breakpoint(max-width 1000px) {
   .home__who {
     margin: 0 auto;
-    small {
-      display: block;
-      @include fluid-type(600px, 1400px, 20px, 24px);
-      font-family: $font-special;
-      flex: 0 0 35%;
-      line-height: 1.2;
-      min-width: 250px;
-      transform: rotate(-2deg);
-      margin-bottom: rem(20);
-    }
 
     p {
       @include fluid-type(600px, 1400px, 14px, 16px);
@@ -288,10 +286,6 @@
   width: 100px;
 }
 
-.home__campaign-museum__quotes__quote--hidden {
-  display: none;
-}
-
 .home__campaign-museum__purpose {
   background-color: white;
   color: color(purple);
@@ -299,7 +293,7 @@
   padding: spacingAgainstBase(3) spacingAgainstBase(2);
   position: relative;
 
-  .heading-level-3 {
+  .h3 {
     @include fluid-type(600px, 1400px, 18px, 20px);
     margin-bottom: spacingAgainstBase(2);
     text-transform: uppercase;
@@ -337,23 +331,66 @@
   }
 }
 
-@include breakpoint(min-width 1600px) {
+@include breakpoint(min-width 1601px) {
   .home__campaign-museum__purpose {
     margin: 0 0;
 
     img {
       position: absolute;
-      width: 40%;
+      max-width: 400px;
+      right: -45%;
+      width: 60%;
 
       &:first-of-type {
         top: 5%;
-        right: -35%;
       }
 
       &:nth-of-type(2) {
         bottom: 15%;
-        right: -35%;
       }
+    }
+  }
+}
+
+@include breakpoint(max-width 1600px) {
+  .home__campaign-museum__purpose {
+    max-width: 100%;
+
+    hr {
+      left: initial;
+    }
+
+    p {
+      line-height: 1.5;
+
+      &:last-of-type {
+        margin: 0 0 spacingAgainstBase(4) 0;
+      }
+    }
+
+    hr,
+    p {
+      max-width: 95%;
+      margin: 0 auto spacingAgainstBase(2) auto;
+    }
+
+    img {
+      display: block;
+      margin: 1rem auto;
+      max-width: 100%;
+    }
+  }
+
+  .home__campaign-museum__ambassadors {
+    margin-top: spacingAgainstBase(4);
+  }
+}
+
+@include breakpoint(max-width 600px) {
+  .home__campaign-museum__purpose {
+    hr,
+    p {
+      max-width: 100%;
     }
   }
 }
