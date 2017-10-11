@@ -1,28 +1,4 @@
 .home {
-  header {
-    align-items: center;
-    background-color: color(orange);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    span {
-      display: block;
-    }
-
-    .h1 {
-      margin-bottom: rem(48);
-    }
-
-    p {
-      @include fluid-type(600px, 1400px, 14px, 16px);
-      font-family: $font-body;
-      line-height: 1.5;
-      min-width: 300px;
-    }
-  }
-
   .background__image {
     display: none;
   }
@@ -30,6 +6,30 @@
   .h2 {
     @include fluid-type(600px, 1000px, 56px, 125px);
     margin-bottom: spacingAgainstBase(2);
+  }
+}
+
+.home__header {
+  align-items: center;
+  background-color: color(orange);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span {
+    display: block;
+  }
+
+  .h1 {
+    margin-bottom: rem(48);
+  }
+
+  p {
+    @include fluid-type(600px, 1400px, 14px, 16px);
+    font-family: $font-body;
+    line-height: 1.5;
+    min-width: 300px;
   }
 }
 
@@ -164,28 +164,25 @@
       @include fluid-type(600px, 1400px, 14px, 16px);
       font-family: $font-body;
       line-height: 1.5;
-      margin-left: 0;
-      min-width: 300px;
-      max-width: 100%;
       margin: 0 auto;
+      max-width: 100%;
+      min-width: 300px;
     }
 
     nav {
+      align-self: flex-end;
       display: flex;
       flex-direction: row;
-      max-width: 100%;
       justify-content: space-between;
-      margin-left: 0;
-      align-self: flex-end;
-      margin: 0 auto;
-      margin-bottom: spacingAgainstBase(1);
+      margin: 0 auto spacingAgainstBase(1) auto;
+      max-width: 100%;
 
       a {
+        @include fluid-type(600px, 1400px, 16px, 20px);
         border: 4px solid color(yellow);
         color: color(yellow);
-        padding: 10px 25px;
-        @include fluid-type(600px, 1400px, 16px, 20px);
         font-family: $font-heading;
+        padding: 10px 25px;
         text-decoration: none;
         text-transform: uppercase;
       }
@@ -201,13 +198,13 @@
 
 .home__quote__inner {
   color: white;
-  max-width: 680px;
   line-height: 1.3;
+  max-width: 680px;
   position: relative;
+  right: -10%;
   text-align: center;
   text-transform: uppercase;
   transform: rotate(3deg);
-  right: -10%;
 
   span {
     color: color(yellow);
@@ -218,11 +215,11 @@
 
   cite {
     display: block;
-    margin: 5vh 0 0 0;
-    transform: rotate(-3deg);
     font-family: $font-body;
     font-size: 15px;
+    margin: 5vh 0 0 0;
     text-align: right;
+    transform: rotate(-3deg);
   }
 }
 
@@ -247,11 +244,12 @@
   @include fluid-type(600px, 1400px, 24px, 27px);
   background-color: white;
   color: color(orange);
+  height: 300px;
   line-height: 1.5;
   margin-bottom: 1rem;
   padding: spacingAgainstBase(3) spacingAgainstBase(3) spacingAgainstBase(6) spacingAgainstBase(3);
-  text-transform: uppercase;
   position: relative;
+  text-transform: uppercase;
 
   &:after {
     top: 100%;
@@ -282,6 +280,7 @@
 
 .home__campaign-museum__quotes__quote__cite__person {
   background-color: black;
+  cursor: pointer;
   height: 100px;
   width: 100px;
 }

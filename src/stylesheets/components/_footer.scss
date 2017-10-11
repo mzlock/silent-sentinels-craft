@@ -29,7 +29,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1200px;
 
   a {
     color: color(orange);
@@ -52,6 +51,11 @@
 
 .footer__section--1 {
   nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
     span {
       display: none;
     }
@@ -59,37 +63,29 @@
     svg {
       fill: color(orange);
     }
+  }
+}
 
-    &:first-of-type {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      padding-top: rem(20);
-      padding-bottom: rem(15);
-    }
+.footer__section--1__nav--1 {
+  padding-top: rem(20);
+  padding-bottom: rem(15);
+}
 
-    &:nth-of-type(2) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-around;
+.footer__section--1__nav--2 {
+  a {
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 3rem;
 
-      a {
-        position: relative;
-        text-decoration: none;
-
-        &:after {
-          background: color(orange);
-          border-radius: 50px;
-          bottom: -10px;
-          content: '';
-          height: 6px;
-          left: 0;
-          position: absolute;
-          width: 98%;
-        }
-      }
+    &:after {
+      background: color(orange);
+      border-radius: 50px;
+      bottom: -10px;
+      content: '';
+      height: 6px;
+      left: 0;
+      position: absolute;
+      width: 98%;
     }
   }
 }
