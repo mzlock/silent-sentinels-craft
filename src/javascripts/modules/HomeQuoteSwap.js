@@ -10,8 +10,6 @@ export default class HomeQuoteSwap {
     this.quoteSayers = Array.from(
       this.el.querySelectorAll('.home__campaign-museum__quotes__quote__cite__person')
     )
-
-    this.quoteList
   }
 
   bindEvents() {
@@ -27,11 +25,12 @@ export default class HomeQuoteSwap {
   }
 
   triggerQuoteChange(e) {
-    this.ariaId = e.target.getAttribute('aria-controls')
-    this.quoteTriggered = document.querySelector(`#${this.ariaId}`)
-    this.quoteClassList = this.quoteTriggered.classList
+    const sayer = e.currentTarget
+    const quoteId = sayer.getAttribute('aria-controls')
+    const quoteTriggered = this.quotations.find(quote => quote.getAttribute('id') === quoteId)
+
     this.hideAll()
 
-    this.triggered == this.quoteClassList.toggle('is-hiding')
+    quoteTriggered.classList.remove('is-hiding')
   }
 }
