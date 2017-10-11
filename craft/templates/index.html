@@ -3,8 +3,8 @@
 
   <header class="home__header section-padding">
     <div class="home__header__inner wrapper">
-      <small><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></small>
-      <h1 class="heading-level-1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
+      <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
+      <h1 class="h1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
       {# <div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div> #}
       <p>The Silent Sentinels were 72 women who picketed, protested, and even went to prison, whatever it took to get women the
         right to vote. Taunts, beatings, and torure did not deter them.</p>
@@ -13,7 +13,7 @@
   </header>
 
   <nav class="home__navigation">
-    <div class="home__navigation__inner wrapper home__links">
+    <div class="home__navigation__inner wrapper component-links">
       {% set entry = craft.entries.section('timeline') %} 
       {% if not craft.request.isLivePreview %} 
         {% for item in entry %}
@@ -26,7 +26,7 @@
   <section class="home__who section-padding">
     <div class="home__who__inner wrapper">
       <div class="home__who__inner__text">
-        <h2 class="heading-level-2"><small><span>Who were the</span></small> Silent Sentinels?</h2>
+        <h2 class="h2"><span class="heading-lead"><span>Who were the</span></span>Silent Sentinels?</h2>
         <nav>
           <a href="/watchvideo">Watch Video</a>
           <a href="/learnmore">Learn About the Sentinels</a>
@@ -46,11 +46,11 @@
 
   <section class="home__quote">
     <div class="home__quote__inner wrapper">
-      <blockquote>“the Government must not think that they can stop this agitation.
+      <blockquote>the Government must not think that they can stop this agitation.
         <span>It will go on.</span> 
-        We are here not because we are law-breakers; we are here in our efforts to become law-makers.”
-        <cite>Emmeline Pankhurst</cite>
+        We are here not because we are law-breakers; we are here in our efforts to become law-makers.
       </blockquote>
+      <cite>Emmeline Pankhurst</cite>
 
       <div class="home__quote__inner__image-container">
         <div class="home__quote__inner__image-container__image" style="background-image: url(./assets/images/home3.png);"> </div>
@@ -61,7 +61,7 @@
   <section class="home__campaign-museum section-padding">
     <div class="home__campaign-museum__wrapper wrapper wrapper--medium">
       <div class="home__campaign-museum__wrapper__text">
-        <h2 class="heading-level-2">The Campaign & Museum</h2>
+        <h2 class="h2">The Campaign & Museum</h2>
         <p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote
           in our democracy. The site is considered hallowed ground for the suffragists and for the modern women’s movement. It
           will provide historical context to the movement toward franchise and also provide individual stories of the women who
@@ -74,51 +74,51 @@
 
       <div class="home__campaign-museum__quotes" data-module="HomeQuoteSwap">
         <ul>
-          <li class="museum__quote">
+          <li class="museum__quote" id="quote-1">
             <article>
               <blockquote>
-                "Decide what your commitment is, make it public, and... report back ot us on your progress so that we can <span>share your story.</span>"
+                Decide what your commitment is, make it public, and... report back ot us on your progress so that we can <span>share your story.</span>
               </blockquote>
             </article>
           </li>
-          <li class="museum__quote">
+          <li class="museum__quote" id="quote-2">
             <article>
               <blockquote class="home__campaign-museum__quotes__quote--hidden">
-                "Alternate quotation #2 goes here"
+                Alternate quotation #2 goes here
               </blockquote>
             </article>
           </li>
-          <li class="museum__quote">
+          <li class="museum__quote" id="quote-3">
             <article>
               <blockquote class="home__campaign-museum__quotes__quote--hidden">
-                "Alternate quotation #3 goes here"
+                Alternate quotation #3 goes here
               </blockquote>
             </article>
           </li>
         </ul>
         <ul class="home__campaign-museum__quotes__quote__cite">
-          <li><div class="home__campaign-museum__quotes__quote__cite__person cite__person--active"><img src="#" alt="">Nancy Pelosi</div></li>
-          <li><div class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><img src="#" alt="">Jessica Williams</div></li>
-          <li><div class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><img src="#" alt="">Malala Yousafzai</div></li>
+          <li aria-controls="quote-1" class="home__campaign-museum__quotes__quote__cite__person cite__person--active"><div><img src="#" alt="">Nancy Pelosi</div></li>
+          <li aria-controls="quote-2" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><div><img src="#" alt="">Jessica Williams</div></li>
+          <li aria-controls="quote-3" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><div><img src="#" alt="">Malala Yousafzai</div></li>
         </ul>
       </div>
 
       <div class="home__campaign-museum__purpose">
-        <h3 class="heading-level-3">What will the museum be?</h3>
+        <h3 class="h3">What will the museum be?</h3>
         <p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote in our democracy.</p>
         <img src="./assets/images/homeCampaign1.png" alt="">
-          <hr>
+        <hr>
         <p>The site is considered hallowed ground</p>
-          <hr>
+        <hr>
         <p>for the suffragists and for the modern women’s movement. </p>
-          <hr>
+        <hr>
         <p>It will provide historical context to the movement toward franchise and also provide individual stories of the women</p>
-          <hr>
+        <hr>
         <p>who helped bring about the ratification of the 19th Amendment to the U.S. Constitution.</p>
         <img src="./assets/images/homeCampaign2.png" alt="">
 
         <div class="home__campaign-museum__ambassadors">
-          <h3 class="heading-level-3">Campaign Ambassadors</h3>
+          <h3 class="h3">Campaign Ambassadors</h3>
           <ul>
             <li>Oprah Winfrey</li>
             <li>Eleanor Holmes Norton</li>
