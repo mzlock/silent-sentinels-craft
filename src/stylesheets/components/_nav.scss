@@ -56,6 +56,21 @@
       g,
       path {
         fill: white;
+        transition: all 0.2s ease;
+      }
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+
+        svg {
+          g,
+          path {
+            fill: color(orange);
+          }
+        }
       }
     }
 
@@ -137,11 +152,11 @@
 
     .global-navigation__inner__social {
       background-color: white;
-      fill: color(orange);
+      bottom: 0px;
+      fill: color(#ffa500);
       justify-content: space-around;
       padding: 0.5rem;
       position: absolute;
-      bottom: 0px;
       width: 100%;
       z-index: 10;
 
@@ -155,11 +170,16 @@
           text-decoration: underline;
         }
 
-        img {
+        img,
+        svg {
           display: block;
           margin: 0 auto;
           max-width: 30px;
           padding-bottom: 0.5rem;
+        }
+
+        svg {
+          fill: color(orange);
         }
 
         span {

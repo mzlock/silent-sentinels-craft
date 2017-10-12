@@ -1,0 +1,25 @@
+{% extends "_layout" %}
+{% block content %}
+
+{% set singleBio = craft.entries().singles.first() %}
+<div class="sentinel-bio__wrapper wrapper section-padding">
+<header class="sentinel-bio__wrapper__header">
+  <div class="sentinel-bio__wrapper__header__inner">
+  <h1 class="h1">
+    <span class="heading-lead">{{entry.leadIn}}</span>
+    {{ entry.pageTitle }}
+  </h1>
+  <p>{{entry.description}}</p>
+  <img src="{{ entry.image.first().url }}" alt="">
+  </div>
+</header>
+
+  <ol class="sentinel-bio__wrapper__index">
+  {% set repeat = 41 %}
+
+  {% for i in 1..repeat %}
+    <li class="sentinel-bio__wrapper__index__sentinel" style="background-image: url('{{ singleBio.image.first().getUrl }}')"><a href="{{ singleBio.url() }}"><span>{{ i }}{{singleBio.sentinel}}</span></a></li>
+  {% endfor %}
+  </ol>
+</div>
+{% endblock %}

@@ -11,6 +11,8 @@
   {% set className = "timeline" %}
   {% elseif craft.request.path == "" %}
     {% set className = "home" %}
+  {% elseif craft.request.path == "bios/sentinel-bio" %}
+    {% set className = "sentinel-bio" %}
   {% else %}
     {% set className = "page" %}
 {% endif %}
