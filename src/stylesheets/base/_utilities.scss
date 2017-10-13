@@ -20,7 +20,9 @@
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
   width: 100%;
+  z-index: 5;
 
   &.wrapper--medium {
     max-width: 960px;
@@ -50,4 +52,9 @@
 
 .is-hiding {
   display: none;
+}
+
+//wrappers apply margin, containers do not
+.container--xsmall {
+  max-width: 560px;
 }

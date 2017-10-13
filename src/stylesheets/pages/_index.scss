@@ -1,3 +1,19 @@
+main > section {
+  position: relative;
+  //keeps gradients in respective spaces
+}
+
+.background-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
 .home {
   .background__image {
     display: none;
@@ -10,8 +26,9 @@
 }
 
 .home__header {
+  position: relative;
+
   align-items: center;
-  background-color: color(orange);
   color: white;
   display: flex;
   flex-direction: column;
@@ -30,6 +47,10 @@
     font-family: $font-body;
     line-height: 1.5;
     min-width: 300px;
+  }
+
+  .background-container__gradient {
+    background-color: color(orange);
   }
 }
 
@@ -51,6 +72,7 @@
 
 .home__navigation {
   background-color: color(turqoise);
+  position: relative;
 
   .component-links {
     padding-bottom: 3vh;
@@ -67,7 +89,6 @@
 }
 
 .home__who {
-  background: linear-gradient(180deg, color(turqoise), color(teal));
   color: white;
 
   small {
@@ -135,6 +156,10 @@
       text-decoration: none;
       text-transform: uppercase;
     }
+  }
+
+  .background-container__gradient {
+    background: linear-gradient(180deg, color(turqoise), color(teal));
   }
 }
 
@@ -226,8 +251,11 @@
 // refactor
 
 .home__campaign-museum {
-  background: linear-gradient(180deg, color(turqoise), color(purple));
   color: white;
+
+  .background-container__gradient {
+    background: linear-gradient(180deg, color(turqoise), color(purple));
+  }
 }
 
 .home__campaign-museum__wrapper__text {

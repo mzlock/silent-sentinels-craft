@@ -1,13 +1,23 @@
 {% extends "_layout" %}
 {% block content %}
-  <header style="background-color: {{entry.colorSwatch.color}};">
-    <h1 class="h1">
-      <span>{{entry.leadIn}}</span>
-      {{ entry.titleText }}
-    </h1>
-    <small>{{entry.date}}</small>
-    <img src="{{ entry.image.first().url }}" alt="">
+  <header class="timeline__header" style="background-color: {{entry.colorSwatch.color}};">
+    <div class="timeline__header__inner wrapper">
+      <div class="timeline__header__inner__text">
+        <h1 class="h1">
+          <span class="heading-lead">{{entry.leadIn}}</span>
+          {{ entry.titleText }}
+        </h1>
+        <span class="timeline__header__inner__text__date">{{entry.date}}</span>
+      </div>
+    </div>
+
+    <div class="background-container">
+      <div class="background__image background__image--cover" style="background-image: url({{entry.image.first().url}})"> </div>
+      <div class="background-container__noise"></div>
+      <div class="background-container__gradient" style="background-color: {{block.colorSwatch.color}};"></div>
+    </div>
   </header>
+
   {% if entry.timelineMatrix|length %}
     {% for block in entry.timelineMatrix %}
 

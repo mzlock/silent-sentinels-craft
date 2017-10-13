@@ -83,3 +83,18 @@ html {
     max-width: 600px;
   }
 }
+
+.background-container__noise {
+  background-image: url(../../assets/images/noise-pattern.png);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.background-container__gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}

@@ -6,15 +6,6 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 80%;
-
-    @include breakpoint(max-width 1000px) {
-      justify-content: center;
-    }
-
-    @include breakpoint(min-width 1400px) {
-      max-width: 1200px;
-    }
   }
 }
 
@@ -23,36 +14,19 @@
   font-weight: 300;
   line-height: 1.6;
   margin-right: 10%;
-  width: 50%;
+  z-index: 1;
 
   .h2 {
     @include fluid-type(600px, 1200px, 28px, 35px);
     margin-bottom: 1rem;
-  }
-
-  @include breakpoint(max-width 1000px) {
-    margin-right: 0;
-    width: 90%;
-    z-index: 1;
   }
 }
 
 .statement-image--split__image-container__image {
   background-repeat: no-repeat;
   height: 100%;
+  opacity: 0.8;
   width: 50%;
-
-  @include breakpoint(max-width 1000px) {
-    background-position-x: 80%;
-    background-size: auto 100%;
-    filter: blur(1.1px);
-    height: 100%;
-    opacity: 0.5;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-  }
 }
 
 .statement-flipped {
@@ -66,4 +40,18 @@
 .background-flipped {
   margin-right: 10%;
   order: 1;
+}
+
+@include breakpoint(max-width 1000px) {
+  .statement-image--split__image-container__image {
+    background-position-x: 80%;
+    background-size: auto 100%;
+    filter: blur(1.1px);
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
 }

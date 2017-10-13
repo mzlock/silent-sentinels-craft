@@ -1,6 +1,41 @@
+.timeline__header {
+  min-height: 600px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.timeline__header__inner__text {
+  padding-top: 30vh;
+  position: relative;
+  margin-left: percentage(90/1200);
+  z-index: 3;
+
+  .h1 {
+    @include fluid-type(600px, 1400px, 56px, 125px);
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+.timeline__header__inner__text__date {
+  @include fluid-type(600px, 1400px, 24px, 30px);
+  color: color(robinBlue);
+  font-family: $font-heading;
+}
+//
+
 .timeline__block {
   position: relative;
-  
 }
 
 .timeline__block__inner {
@@ -8,7 +43,6 @@
   display: flex;
   flex-wrap: nowrap;
   min-height: 600px;
-  padding-bottom: rem(40);
   position: relative;
   width: 100%;
 
@@ -22,11 +56,15 @@
 }
 
 .background__image {
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
   height: 100%;
+  left: 0;
+  opacity: 0.6;
   position: absolute;
-  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 2;
 
   &.quote-image__image-container__image {
     background-position-x: 70%;
@@ -36,5 +74,13 @@
   &.fact-image--full__image-container__image {
     background-position-x: center;
     top: 0;
+  }
+
+  &.background__image--cover {
+    background-position: cover;
+  }
+
+  &.background__image--contain {
+    background-position: contain;
   }
 }

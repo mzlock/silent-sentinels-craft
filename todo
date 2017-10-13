@@ -1,3 +1,23 @@
-1. Add a "offset" field for controlling where the background image is placed.
-2. Add a gradient option.
-3. Missing Page Navigation.
+1. Add a gradient option in the CMS.
+2. Fix the Sentinels setup in the CMS
+3. Add background images
+
+5. Cleanup homepage add stuff 
+- Need images on Javascript portion.
+
+4. Run a CSS cleaner to check for excess
+
+6. Make GH Issues
+
+7. 🔑 BROWSER TESTING.
+
+10. colors in CMS
+- are images optimized?
+- animations?
+
+
+
+
+
+* heading font on firefox not working
+* need svg or purple fill png logo for mobile menu (fill tool does not do well)
