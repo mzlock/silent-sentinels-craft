@@ -17,7 +17,7 @@
       {% set entry = craft.entries.section('timeline') %} 
       {% if not craft.request.isLivePreview %} 
         {% for item in entry %}
-          <a href="{{item.getUrl()}}">{{item.titleText}}</a> 
+          <a class="button" href="{{item.getUrl()}}">{{item.titleText}}</a> 
         {% endfor %}
       {% endif %}
     </div>

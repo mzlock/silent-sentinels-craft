@@ -23,7 +23,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-  {% includeCssFile "/assets/stylesheets/app.css" %}
+  <link rel="stylesheet" href="{{ 'assets/stylesheets/app.css' | gulp_rev }}">
 
   <script>
     var html = document.querySelector('html');
@@ -43,6 +43,6 @@
 
   {% include "_includes/footer.html" %}
 
-  <script src="/assets/javascripts/app.js"></script>
+  <script src="{{ 'assets/javascripts/app.js' | gulp_rev }}"></script>
 </body>
 </html>

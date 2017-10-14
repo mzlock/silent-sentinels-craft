@@ -8,9 +8,13 @@
 
 .global-navigation__inner {
   display: flex;
+
+  .button {
+    @include fluid-type(600px, 1201px, 28px, 16px);
+  }
 }
 
-@include breakpoint(min-width 1201px) {
+@include breakpoint($tablet-up) {
   .global-navigation {
     display: flex;
     flex-wrap: nowrap;
@@ -26,6 +30,10 @@
     flex: 0 0 75%;
     flex-wrap: nowrap;
     justify-content: space-around;
+
+    &.mobile-only {
+      display: none;
+    }
   }
 
   .global-navigation__inner__pages {
@@ -35,13 +43,20 @@
     top: 0;
 
     a {
+      border: 0;
       color: white;
       font-family: $font-heading;
+      margin: 0;
+      padding: 0;
       text-decoration: none;
       text-transform: uppercase;
+      transition: all 0.2s ease;
 
       &:hover,
       &:focus {
+        background-color: transparent;
+        border: 0;
+        color: color(darkPurple);
         text-decoration: underline;
       }
     }
@@ -82,40 +97,11 @@
   }
 }
 
-@include breakpoint(max-width 1200px) {
+@include breakpoint($tablet-down) {
   html[data-js='hasJs'] {
     .global-navigation {
       &.wrapper {
         padding: 0;
-      }
-    }
-
-    .global-navigation__header {
-      background-color: white;
-      display: flex;
-      height: 50px;
-      justify-content: space-between;
-      position: relative;
-      left: 0;
-      width: 100%;
-      z-index: 12;
-
-      button {
-        align-self: center;
-        cursor: pointer;
-        flex: 0 0 10%;
-        z-index: 12;
-      }
-    }
-
-    .global-navigation__icon-menu {
-      background-color: transparent;
-      border: 0;
-      position: absolute;
-      right: 20px;
-
-      path {
-        fill: color(purple);
       }
     }
 
@@ -131,62 +117,101 @@
       z-index: 3;
     }
 
-    .global-navigation__inner__site-logo {
-      background-color: color(purple);
-    }
-
     .global-navigation__inner__pages {
       a {
-        display: block;
-        text-align: center;
+        color: white;
+
+        &:hover, &:focus {
+          color: color(darkPurple);
+        }
       }
-    }
-
-    .menu--active {
-      transform: translate(0, calc(100vh + 50px));
-    }
-
-    .menu--transition {
-      transition: transform 0.3s ease;
     }
 
     .global-navigation__inner__social {
-      background-color: white;
-      bottom: 0px;
-      fill: color(#ffa500);
-      justify-content: space-around;
-      padding: 0.5rem;
-      position: absolute;
-      width: 100%;
-      z-index: 10;
+        position: absolute;
+        bottom: 0px;
+    }
+  }
 
-      a {
-        color: color(orange);
-        text-decoration: none;
-        transition: all 0.2s ease;
+  .global-navigation__inner {
+    a {
+      color: color(darkPurple);
+    }
+  }
 
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-        }
+  .global-navigation__inner__pages {
+    a {
+      display: block;
+      text-align: center;
+    }
+  }
 
-        img,
-        svg {
-          display: block;
-          margin: 0 auto;
-          max-width: 30px;
-          padding-bottom: 0.5rem;
-        }
+  .menu--active {
+    transform: translate(0, calc(100vh + 50px));
+  }
 
-        svg {
-          fill: color(orange);
-        }
+  .menu--transition {
+    transition: transform 0.3s ease;
+  }
 
-        span {
-          display: block;
-          margin: 0 auto;
-        }
+  .global-navigation__inner__social {
+    background-color: white;
+    fill: color(orange);
+    justify-content: space-around;
+    padding: 0.5rem;
+    width: 100%;
+    z-index: 10;
+
+    a {
+      color: color(orange);
+      text-decoration: none;
+      transition: all 0.2s ease;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
       }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 30px;
+        padding-bottom: 0.5rem;
+      }
+
+      span {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .global-navigation__header {
+    background-color: white;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    width: 100%;
+    z-index: 12;
+
+    button {
+      align-self: center;
+      cursor: pointer;
+      flex: 0 0 10%;
+      z-index: 12;
+    }
+  }
+
+  .global-navigation__icon-menu {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 20px;
+
+    path {
+      fill: color(purple);
     }
   }
 }

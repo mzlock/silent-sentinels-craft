@@ -37,7 +37,7 @@ export default class MobileNav {
   }
 
   shouldHide() {
-    let ariaHidden = this.viewportWidth < this.breakpoint && !this.isOpen ? 'true' : 'false'
+    let ariaHidden = this.viewportWidth < this.breakpoint && this.isOpen
     this.menuContainer.setAttribute('aria-hidden', ariaHidden)
   }
 }
