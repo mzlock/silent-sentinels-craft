@@ -139,6 +139,10 @@
     }
   }
 
+  .global-navigation__inner__site-logo {
+    padding: 0.8rem;
+  }
+
   .global-navigation__inner__pages {
     a {
       display: block;
@@ -187,7 +191,7 @@
   }
 
   .global-navigation__header {
-    background-color: white;
+    background-color: color(darkPurple);
     display: flex;
     height: 50px;
     justify-content: space-between;
@@ -211,7 +215,7 @@
     right: 20px;
 
     path {
-      fill: color(purple);
+      fill: white;
     }
   }
 }
