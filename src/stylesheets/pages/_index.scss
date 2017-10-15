@@ -271,11 +271,14 @@ main > section {
 .museum__quote blockquote {
   @include fluid-type(600px, 1400px, 24px, 27px);
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: color(orange);
-  height: 300px;
+  min-height: 300px;
   line-height: 1.5;
   margin-bottom: 1rem;
-  padding: spacingAgainstBase(3) spacingAgainstBase(3) spacingAgainstBase(6) spacingAgainstBase(3);
+  padding: spacingAgainstBase(3) spacingAgainstBase(2) spacingAgainstBase(6) spacingAgainstBase(2);
   position: relative;
   text-transform: uppercase;
 
