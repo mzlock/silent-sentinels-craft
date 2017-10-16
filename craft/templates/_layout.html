@@ -11,6 +11,8 @@
   {% set className = "timeline" %}
   {% elseif craft.request.path == "" %}
     {% set className = "home" %}
+    {% set dataModule = "HomeScrollNavigation" %}
+    {% set scrollNavigation = true %}
   {% else %}
     {% set className = "page" %}
 {% endif %}
@@ -32,11 +34,19 @@
 <body>
   {% include "_includes/navigation.html" %}
 
-  <div id="site-container">
+  <div id="site-container"
+    {% if dataModule %}
+      data-module="{{dataModule}}"
+    {% endif %}
+  >
     <main class="{{className}}">
       {% block content %}
       {% endblock %}
     </main>
+
+    {% if scrollNavigation == true %}
+      {% include "_includes/scroll-navigation.html" %}
+    {% endif %}
   </div>
 
   {% include "_includes/footer.html" %}

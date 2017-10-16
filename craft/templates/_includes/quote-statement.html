@@ -1,5 +1,11 @@
+{% if block.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
 <section class="timeline__block quote-statement">
-  <div class="timeline__block__inner">
+  <div class="timeline__block__inner wrapper">
     <div class="quote-statement__quote">
       <blockquote>{{ block.quote }}</blockquote>
     </div>
@@ -7,5 +13,16 @@
       <h2 class="h2">{{ block.statementTitle }}</h2>
       <p>{{ block.statement }}</p>
     </div>
+  </div>
+  <div class="background-container">
+    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background-container__noise"></div>
+    <div class="background-container__gradient"
+    {% if gradient %}
+      style="background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
+    {% else %}
+      style="background: {{block.colorPrimary}};"
+    {% endif %}
+    ></div>
   </div>
 </section>

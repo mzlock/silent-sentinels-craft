@@ -1,10 +1,9 @@
 {% extends "_layout" %} 
 {% block content %}
-
-  <header class="home__header section-padding">
+  <header class="home__header section-padding section" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
       <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
-      <h1 class="h1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
+      <h1 class="h1" id="section-1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
       {# <div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div> #}
       <p>The Silent Sentinels were 72 women who picketed, protested, and even went to prison, whatever it took to get women the
         right to vote. Taunts, beatings, and torure did not deter them.</p>
@@ -31,10 +30,10 @@
     </div>
   </nav>
 
-  <section class="home__who section-padding">
-    <div class="home__who__inner wrapper">
+  <section class="home__who section-padding section" data-nav-item="section-2">
+    <div class="home__who__inner wrapper wrapper--xsmall">
       <div class="home__who__inner__text">
-        <h2 class="h2"><span class="heading-lead"><span>Who were the</span></span>Silent Sentinels?</h2>
+        <h2 class="h2" id="section-2"><span class="heading-lead"><span>Who were the</span></span>Silent Sentinels?</h2>
         <nav>
           <a href="/watchvideo">Watch Video</a>
           <a href="/learnmore">Learn About the Sentinels</a>
@@ -75,10 +74,10 @@
     </div>
   </section>
 
-  <section class="home__campaign-museum section-padding">
+  <section class="home__campaign-museum section-padding section" data-nav-item="section-3">
     <div class="home__campaign-museum__wrapper wrapper wrapper--medium">
       <div class="home__campaign-museum__wrapper__text">
-        <h2 class="h2">The Campaign & Museum</h2>
+        <h2 class="h2" id="section-3">The Campaign & Museum</h2>
         <p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote
           in our democracy. The site is considered hallowed ground for the suffragists and for the modern women’s movement. It
           will provide historical context to the movement toward franchise and also provide individual stories of the women who
@@ -114,9 +113,24 @@
           </li>
         </ul>
         <ul class="home__campaign-museum__quotes__quote__cite">
-          <li aria-controls="quote-1" class="home__campaign-museum__quotes__quote__cite__person cite__person--active"><div><img src="#" alt="">Nancy Pelosi</div></li>
-          <li aria-controls="quote-2" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><div><img src="#" alt="">Jessica Williams</div></li>
-          <li aria-controls="quote-3" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive"><div><img src="#" alt="">Malala Yousafzai</div></li>
+          <li aria-controls="quote-1" class="home__campaign-museum__quotes__quote__cite__person cite__person--active">
+            <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
+              <img src="./assets/images/quote-pelosi.png" alt="">
+            </div>
+            <span>Nancy Pelosi</span>
+          </li>
+          <li aria-controls="quote-2" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive">
+            <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
+              <img src="./assets/images/quote-williams.png" alt="">
+            </div>
+            <span>Jessica Williams</span>
+          </li>
+          <li aria-controls="quote-3" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive">
+            <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
+              <img src="./assets/images/quote-yousafzai.png" alt="">
+            </div>
+            <span>Malala Yousafzai</span>
+          </li>
         </ul>
       </div>
 
@@ -151,5 +165,4 @@
       <div class="background-container__gradient"></div>
     </div>
   </section>
-
 {% endblock %}

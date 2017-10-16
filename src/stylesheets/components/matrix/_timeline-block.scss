@@ -12,10 +12,16 @@
     width: 100%;
     height: auto;
   }
+
+  .timeline__header__inner__text__date,
+  .heading-lead {
+    margin-left: percentage(40/1200);
+  }
 }
 
 .timeline__header__inner__text {
-  padding-top: 30vh;
+  padding-top: 200px;
+  padding-bottom: 250px;
   position: relative;
   margin-left: percentage(90/1200);
   z-index: 3;
@@ -32,7 +38,6 @@
   color: color(robinBlue);
   font-family: $font-heading;
 }
-//
 
 .timeline__block {
   position: relative;

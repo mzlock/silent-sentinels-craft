@@ -1,4 +1,10 @@
-<section class="timeline__block quote-image" style="background-color: {{block.colorSwatch.color}};">
+{% if block.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
+<section class="timeline__block quote-image">
   <div class="timeline__block__inner wrapper">
     <blockquote>
       <span class="leads">
@@ -20,9 +26,16 @@
       </cite>
     </blockquote>
   </div>
+
   <div class="background-container">
     <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
     <div class="background-container__noise"></div>
-    <div class="background-container__gradient" style="background-color: {{block.colorSwatch.color}};"></div>
+    <div class="background-container__gradient"
+    {% if gradient %}
+      style="background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
+    {% else %}
+      style="background: {{block.colorPrimary}};"
+    {% endif %}
+    ></div>
   </div>
 </section>

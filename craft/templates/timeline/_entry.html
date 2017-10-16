@@ -1,6 +1,13 @@
 {% extends "_layout" %}
+
+{% if entry.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
 {% block content %}
-  <header class="timeline__header" style="background-color: {{entry.colorSwatch.color}};">
+  <header class="timeline__header">
     <div class="timeline__header__inner wrapper">
       <div class="timeline__header__inner__text">
         <h1 class="h1">
@@ -14,7 +21,14 @@
     <div class="background-container">
       <div class="background__image background__image--cover" style="background-image: url({{entry.image.first().url}})"> </div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background-color: {{block.colorSwatch.color}};"></div>
+      <div class="background-container__gradient" 
+        {% if gradient %}
+          style= "background: {{entry.colorPrimary}}; 
+          background: linear-gradient(180deg,{{entry.colorPrimary}}, {{entry.colorSecondary}});"
+        {% else %} 
+          style= "background: {{entry.colorPrimary}};"
+        {% endif %}
+      ></div>
     </div>
   </header>
 

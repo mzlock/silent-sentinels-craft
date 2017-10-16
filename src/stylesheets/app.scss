@@ -1,33 +1,33 @@
-@import "vendor/font-face";
-@import "base/typography";
+@import 'vendor/font-face';
+@import 'base/typography';
 
-@import "vendor/breakpoint.scss";
+@import 'vendor/breakpoint.scss';
 
-@import "base/colors.scss";
+@import 'base/colors.scss';
 
-@import "vendor/reset";
-@import "vendor/linear-gradient";
+@import 'vendor/reset';
+@import 'vendor/linear-gradient';
 
-@import "build/variables";
-@import "build/functions";
-@import "build/mixins";
-@import "base/elements.scss";
+@import 'build/variables';
+@import 'build/functions';
+@import 'build/mixins';
+@import 'base/elements.scss';
 
-@import "base/typography.scss";
+@import 'base/typography.scss';
 
-@import "base/utilities.scss";
+@import 'base/utilities.scss';
 
 // page or component pieces
 
-@import "components/footer";
-@import "components/nav";
+@import 'components/footer';
+@import 'components/nav';
 
-@import "components/matrix/timeline-block";
-@import "components/matrix/statement-and-image-block-split";
-@import "components/matrix/fact-full-bg";
-@import "components/matrix/quote-block";
-@import "components/matrix/statement-and-image-block-split";
+@import 'components/matrix/timeline-block';
+@import 'components/matrix/statement-and-image-block-split';
+@import 'components/matrix/fact-full-bg';
+@import 'components/matrix/quote-block';
+@import 'components/matrix/statement-and-image-block-split';
+@import 'components/scroll-navigation.scss';
 
-@import "pages/index";
-@import "pages/404";
-
+@import 'pages/index';
+@import 'pages/404';

@@ -1,7 +1,13 @@
 {% set statementClass = block.flip == 1 ? "statement-flipped" : "" %}
 {% set backgroundClass = block.flip == 1 ? "background-flipped" : "" %}
 
-<section class="timeline__block statement-image--split" style="background-color: {{block.colorSwatch.color}};">
+{% if block.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
+<section class="timeline__block statement-image--split">
   <div class="timeline__block__inner wrapper">
     <div class="statement-image--split__text container--xsmall {{statementClass}}">
       <h2 class="h2">{{ block.blockTitle }}</h2>
@@ -11,6 +17,12 @@
   </div>
   <div class="background-container">
     <div class="background-container__noise"></div>
-    <div class="background-container__gradient" style="background-color: {{block.colorSwatch.color}};"></div>
+    <div class="background-container__gradient" 
+    {% if gradient %}
+      style= "background: {{block.colorPrimary}}; background: linear-gradient(180deg,{{block.colorPrimary}}, {{block.colorSecondary}});"
+    {% else %} 
+      style= "background: {{block.colorPrimary}};"
+    {% endif %}
+    ></div>
   </div>
 </section>

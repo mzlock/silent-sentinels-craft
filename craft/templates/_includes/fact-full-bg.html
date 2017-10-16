@@ -1,3 +1,9 @@
+{% if block.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
 <section class="timeline__block fact-image--full">
   <div class="timeline__block__inner wrapper section-padding">
     <div class="fact-image--full__statement container--xsmall">
@@ -6,8 +12,14 @@
     </div>
   </div>
   <div class="background-container">
-    <div class="background__image background__image--cover" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
     <div class="background-container__noise"></div>
-    <div class="background-container__gradient" style="background-color: {{block.colorSwatch.color}};"></div>
+    <div class="background-container__gradient"
+    {% if gradient %}
+      style="background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
+    {% else %}
+      style="background: {{block.colorPrimary}};"
+    {% endif %}
+    ></div>
   </div>
 </section>
