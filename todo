@@ -21,3 +21,8 @@
 
 * heading font on firefox not working
 * need svg or purple fill png logo for mobile menu (fill tool does not do well)
+1. Add a "offset" field for controlling where the background image is placed.
+2. Add a gradient option.
+3. Missing Page Navigation.
+
+9. make a class for buttons.

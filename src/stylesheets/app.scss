@@ -17,8 +17,6 @@
 
 @import 'base/utilities.scss';
 
-// page or component pieces
-
 @import 'components/footer';
 @import 'components/nav';
 
@@ -30,4 +28,5 @@
 @import 'components/scroll-navigation.scss';
 
 @import 'pages/index';
+@import 'pages/sentinel-index';
 @import 'pages/404';

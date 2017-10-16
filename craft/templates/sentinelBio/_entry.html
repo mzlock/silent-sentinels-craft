@@ -1,17 +1,27 @@
 {% extends "_layout" %}
 {% block content %}
-<header>
-<div class="wysiwyg">
-  <h1>
-    <span>{{entry.leadIn}}</span>
-    {{ entry.titleText }}
-  </h1>
-  <p>{{entry.description}}</p>
-  <img src="{{ entry.image.first().url }}" alt="">
-</header>
-</div>
-  <ol>
-    <li><a href="{{ entry.sentinel.url() }}" style="background-image: url('{{ entry.image.first().getUrl }}')"><span>{entry.sentinel}</span></a></li>
-  </ol>
 
+{% set bios = craft.entries.section('bios') %}
+<div class="sentinel-bio__wrapper wrapper section-padding">
+  <header class="sentinel-bio__wrapper__header">
+    <div class="sentinel-bio__wrapper__header__inner">
+      <h1 class="h1">
+        <span class="heading-lead">{{entry.leadIn}}</span>
+        {{ entry.pageTitle }}
+      </h1>
+      <p>{{entry.description}}</p>
+      <img src="{{ entry.image.first().url }}" alt="">
+    </div>
+  </header>
+
+  <ol class="sentinel-bio__wrapper__index">
+    {% for bio in bios %}
+      <li class="sentinel-bio__wrapper__index__container">
+        <a class="sentinel-bio__wrapper__index__container__sentinel" style="background-image: url('{{ bio.image.first().getUrl }}')" href="{{ bio.url() }}">
+          <span>{{ i }}{{bio.sentinel}}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</div>
 {% endblock %}

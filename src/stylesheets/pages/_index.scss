@@ -71,19 +71,18 @@ main > section {
 
 .home__navigation {
   background-color: color(turqoise);
-  position: relative;
+}
 
-  .component-links {
-    padding-bottom: 3vh;
-    padding-top: 10vh;
+.component-links {
+  padding-bottom: 3vh;
+  padding-top: 10vh;
 
-    a {
-      @include fluid-type(600px, 1400px, 46px, 65px);
-      display: block;
-      margin: 0 auto spacingAgainstBase(2) auto;
-      max-width: 800px;
-      text-align: center;
-    }
+  a {
+    @include fluid-type(600px, 1400px, 46px, 65px);
+    display: block;
+    margin: 0 auto spacingAgainstBase(2) auto;
+    max-width: 800px;
+    text-align: center;
   }
 }
 

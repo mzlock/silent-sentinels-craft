@@ -33,14 +33,14 @@ html {
   overflow-x: hidden;
 }
 
-@include breakpoint(min-width 1200px) {
-  #mobile-only {
+@include breakpoint(min-width 1201px) {
+  .mobile-only {
     display: none;
   }
 }
 
 @include breakpoint(max-width 1200px) {
-  #desktop-only {
+  .desktop-only {
     display: none;
   }
 }
@@ -60,25 +60,6 @@ html {
   @include fluid-type(600px, 1400px, 28px, 65px);
   text-align: center;
 
-  a {
-    border: 0.5rem solid white;
-    color: white;
-    font-family: $font-heading;
-    margin: 0 auto 2vh auto;
-    padding: 3vh 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
-
-    &:hover,
-    &:focus {
-      background-color: white;
-      border: 0.5rem solid white;
-      color: color(darkPurple);
-      text-decoration: none;
-    }
-  }
-
   @include breakpoint(max-width 1200px) {
     max-width: 600px;
   }
@@ -97,4 +78,23 @@ html {
   height: 100%;
   position: absolute;
   z-index: 1;
+}
+
+.button {
+  border: 0.5rem solid white;
+  color: white;
+  font-family: $font-heading;
+  margin: 0 auto 2vh auto;
+  padding: 3vh 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: white;
+    border: 0.5rem solid white;
+    color: color(darkPurple);
+    text-decoration: none;
+  }
 }
