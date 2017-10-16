@@ -1,0 +1,21 @@
+.statement-image--full {
+  min-height: 800px;
+
+  .statement-flipped {
+    justify-content: flex-end;
+  }
+
+  .h2 {
+    @include fluid-type(600px, 1400px, 28px, 35px);
+    margin-bottom: spacingAgainstBase(1);
+    margin-top: spacingAgainstBase(6);
+    text-transform: uppercase;
+  }
+}
+
+.statement-image--full__text {
+  p {
+    line-height: 1.5;
+    margin-bottom: spacingAgainstBase(2);
+  }
+}

@@ -1,0 +1,62 @@
+// refactor
+.quote-statement {
+  .timeline__block__inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  blockquote p {
+    text-align: right;
+  }
+}
+
+.quote-statement__quote {
+  @include fluid-type(600px, 1400px, 36px, 45px);
+  flex: 0 0 35%;
+
+  p {
+    font-family: $font-heading;
+  }
+
+  strong {
+    display: block;
+    color: color(yellow);
+  }
+}
+
+.quote-statement__statement {
+  flex: 0 0 60%;
+
+  .h2 {
+    @include fluid-type(600px, 1400px, 28px, 35px);
+    margin-bottom: spacingAgainstBase(2);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: $font-body;
+    line-height: 1.5;
+  }
+}
+
+@include breakpoint(max-width 900px) {
+  .quote-statement {
+    .timeline__block__inner {
+      flex-direction: column;
+    }
+
+    blockquote p {
+      text-align: center;
+    }
+  }
+
+  .quote-statement__quote {
+    flex: 0 0 100%;
+    margin-bottom: spacingAgainstBase(3);
+  }
+
+  .quote-statement__statement {
+    flex: 0 0 100%;
+  }
+}
