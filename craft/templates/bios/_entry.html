@@ -1,0 +1,22 @@
+{% extends "_layout" %}
+{% block content %}
+
+<div class="sentinel-individual section-padding">
+  <article class="sentinel-individual__article wrapper wrapper--medium-alternate">
+    <header class="sentinel-individual__article__header">
+      <h1 class="h1 wrapper wrapper--small">{{ entry.sentinel }}</h1>
+    </header>
+    <div class="sentinel-individual__article__text-content">
+      <div class="sentinel-individual__article__text-content__container container--medium margin-center">
+        {{ entry.bio}}
+      </div>
+    </div>
+  </article>
+</div>
+<div class="background-container">
+  <div class="background-container__noise"></div>
+  <div class="background-container__gradient" style="background: linear-gradient(180deg, #372745, #008d96);"></div>
+</div>
+
+{% endblock %}
+

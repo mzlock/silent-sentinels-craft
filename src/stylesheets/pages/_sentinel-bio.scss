@@ -1,0 +1,38 @@
+.sentinel-individual {
+
+}
+
+.sentinel-individual__article {
+  
+}
+
+.sentinel-individual__article__header {
+  background-image: url('http://fillmurray.com/g//460/300');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 24vh;
+  position: relative;
+
+  .h1 {
+    @include fluid-type(600px, 1400px, 28px, 40px);
+    background-color: lighten(color(teal), 5%);
+    bottom: -20px;
+    color: white;
+    left: 50%;
+    padding: spacingAgainstBase(1) spacingAgainstBase(0.5);
+    position: absolute;
+    margin: auto;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}
+
+.sentinel-individual__article__text-content {
+  background-color: white;
+  padding: spacingAgainstBase(3) spacingAgainstBase(0.5) spacingAgainstBase(5) spacingAgainstBase(0.5);
+}
+
+.sentinel-individual__article__text-content__container {
+  line-height: 1.5;
+}

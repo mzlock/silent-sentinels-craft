@@ -1,5 +1,4 @@
 .sentinel-bio {
-  background: linear-gradient(180deg, color(turqoise), color(purple));
   color: white;
 }
 
@@ -9,8 +8,9 @@
 }
 
 .sentinel-bio__wrapper__header {
-  min-width: 300px;
   text-align: center;
+  min-width: 300px;
+  position: relative;
   width: percentage(598/1200);
   z-index: 3;
 
@@ -25,6 +25,23 @@
   p {
     line-height: 1.5;
   }
+
+  .h1, p {
+    position: relative;
+    z-index: 3;
+  }
+
+  img {
+    position: absolute;
+    left: 0px;
+    top: -135px;
+    
+    max-width: 300px;
+  }
+}
+.sentinel-bio__wrapper__index__container {
+  position: relative;
+  z-index: 3;
 }
 
 .sentinel-bio__wrapper__index__container__sentinel {

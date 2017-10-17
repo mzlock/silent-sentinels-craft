@@ -1,9 +1,12 @@
 .global-footer {
+  background-color: white;
   clear: both;
   display: flex;
   justify-content: center;
   padding-top: rem(70);
   padding-bottom: rem(50);
+  position: relative;
+  z-index: 1;
 
   .h2 {
     color: color(darkPurple);
