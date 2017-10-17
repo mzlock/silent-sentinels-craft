@@ -57,3 +57,13 @@
 .container--xsmall {
   max-width: 560px;
 }
+
+.container--mini {
+  max-width: 470px;
+}
+
+.background__image {
+  &.background__image--cover {
+    background-size: cover;
+  }
+}

@@ -4,7 +4,7 @@
   {% set gradient = true %}
 {% endif %}
 
-<section class="timeline__block quote-statement">
+<section class="timeline__block quote-statement section-padding">
   <div class="timeline__block__inner wrapper">
     <div class="quote-statement__quote">
       <blockquote>{{ block.quote }}</blockquote>
@@ -15,7 +15,6 @@
     </div>
   </div>
   <div class="background-container">
-    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
     <div class="background-container__noise"></div>
     <div class="background-container__gradient"
     {% if gradient %}

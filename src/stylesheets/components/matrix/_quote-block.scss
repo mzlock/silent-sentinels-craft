@@ -1,7 +1,6 @@
 .quote-image {
   .timeline__block__inner {
     justify-content: center;
-    padding: rem(115) 0;
 
     blockquote {
       @include fluid-type(600px, 1400px, 18px, 25px);
@@ -32,6 +31,12 @@
   font-family: $font-heading;
   margin: 0 auto;
   width: percentage(430/720);
+}
+
+.quote-image__attribution,
+.quote-image__context,
+.leads {
+  margin-bottom: spacingAgainstBase(0.4);
 }
 
 @include breakpoint(max-width 800px) {

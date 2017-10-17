@@ -1,3 +1,7 @@
+.global-navigation {
+  z-index: 10;
+}
+
 .global-navigation__inner__social {
   display: flex;
 }
@@ -83,7 +87,7 @@
         svg {
           g,
           path {
-            fill: color(orange);
+            fill: color(purple);
           }
         }
       }
@@ -130,6 +134,15 @@
     .global-navigation__inner__social {
         position: absolute;
         bottom: 0px;
+
+        svg, img {
+          display: block;
+          margin: 0 auto;
+          width: 30px;
+        }
+        path {
+          fill: color(orange);
+        }
     }
   }
 

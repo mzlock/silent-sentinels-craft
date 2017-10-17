@@ -2,20 +2,15 @@
   min-height: 600px;
   position: relative;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    width: 100%;
-    height: auto;
-  }
-
   .timeline__header__inner__text__date,
   .heading-lead {
     margin-left: percentage(40/1200);
+  }
+
+  .heading-lead {
+    @include fluid-type(800px, 1400px, 28px, 40px);
+    margin-bottom: spacingAgainstBase(1);
+    transform: rotate(0deg);
   }
 }
 

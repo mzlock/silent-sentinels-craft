@@ -16,7 +16,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  margin-left: percentage(160/1200);
 
   .h2 {
     @include fluid-type(600px, 1000px, 28px, 40px);

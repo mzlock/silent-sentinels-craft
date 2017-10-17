@@ -1,4 +1,4 @@
-main > section {
+main > section, main > .home__navigation {
   position: relative;
 }
 
@@ -14,10 +14,6 @@ main > section {
 }
 
 .home {
-  .background__image {
-    display: none;
-  }
-
   .h2 {
     @include fluid-type(600px, 1000px, 56px, 125px);
     margin-bottom: spacingAgainstBase(2);
@@ -25,13 +21,12 @@ main > section {
 }
 
 .home__header {
-  position: relative;
-
   align-items: center;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   span {
     display: block;
@@ -46,10 +41,6 @@ main > section {
     font-family: $font-body;
     line-height: 1.5;
     min-width: 300px;
-  }
-
-  .background-container__gradient {
-    background-color: color(orange);
   }
 }
 
@@ -67,10 +58,6 @@ main > section {
       margin-left: percentage(100/800);
     }
   }
-}
-
-.home__navigation {
-  background-color: color(turqoise);
 }
 
 .component-links {

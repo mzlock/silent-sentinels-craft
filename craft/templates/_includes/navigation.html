@@ -10,9 +10,9 @@
   <div class="global-navigation__inner" id="global-navigation">
     <div class="global-navigation__inner__pages">
       {% for entry in craft.entries.section('Timeline') %}
-        <a class="button" href="{{entry.url()}}">{{entry.titleText}}</a>
+        <a class="button button--medium" href="{{entry.url()}}">{{entry.titleText}}</a>
       {% endfor %}
-      <a class="button" href="/sentinel-bio">Sentinels</a>
+      <a class="button button--medium" href="/sentinel-bio">Sentinels</a>
     </div>
 
     <div class="global-navigation__inner__social">

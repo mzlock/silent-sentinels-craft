@@ -34,6 +34,7 @@ export default class MobileNav {
   onResize() {
     this.viewportWidth = document.documentElement.clientWidth
     this.shouldHide()
+    this.viewportWidth > 1000 ? this.htmlElement.classList.remove('menu--overflow') : null
   }
 
   shouldHide() {

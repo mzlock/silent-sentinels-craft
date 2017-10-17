@@ -1,4 +1,12 @@
-{% extends "_layout" %} 
+{% extends "_layout" %}
+{% set colors = {
+  turqouise: '#024c64',
+  deepTeal: '#008d96',
+  lightTeal: '#16bfc0',
+  purple: '#372745',
+  orange: '#e65621'
+} %}
+
 {% block content %}
   <header class="home__header section-padding section" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
@@ -9,9 +17,10 @@
         right to vote. Taunts, beatings, and torure did not deter them.</p>
       <p>Help us build a museum to honor these brave women. We can make sure the sentinels are silent no longer.</p>
     </div>
-    <div class="background-container">
+     <div class="background-container">
+      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home1.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient"></div>
+      <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
     </div>
   </header>
 
@@ -25,8 +34,9 @@
       {% endif %}
     </div>
      <div class="background-container">
+      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home2.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient"></div>
+      <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
     </div>
   </nav>
 

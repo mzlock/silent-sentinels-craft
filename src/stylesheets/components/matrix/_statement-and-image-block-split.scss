@@ -12,13 +12,18 @@
 .statement-image--split__text {
   @include fluid-type(600px, 1200px, 16px, 18px);
   font-weight: 300;
-  line-height: 1.6;
   margin-right: 10%;
   z-index: 1;
 
   .h2 {
     @include fluid-type(600px, 1200px, 28px, 35px);
     margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: $font-body;
+    line-height: 1.6;
   }
 }
 
