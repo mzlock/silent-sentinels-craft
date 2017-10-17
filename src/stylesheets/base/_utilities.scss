@@ -41,7 +41,7 @@
   }
 
   &.wrapper--footer__section {
-    max-width: 300px;
+    max-width: 450px;
   }
 }
 
@@ -62,8 +62,16 @@
   max-width: 470px;
 }
 
+.container--footer {
+  max-width: 400px;
+}
+
 .background__image {
   &.background__image--cover {
     background-size: cover;
   }
+}
+
+.margin-center {
+  margin: 0 auto;
 }

@@ -142,10 +142,6 @@ main > section, main > .home__navigation {
       text-transform: uppercase;
     }
   }
-
-  .background-container__gradient {
-    background: linear-gradient(180deg, color(turqoise), color(teal));
-  }
 }
 
 .home__who__inner__text {
@@ -222,6 +218,7 @@ main > section, main > .home__navigation {
     display: block;
     font-family: $font-body;
     font-size: 15px;
+    font-weight: 600;
     margin: 5vh 0 0 0;
     text-align: right;
     transform: rotate(-3deg);
@@ -232,10 +229,6 @@ main > section, main > .home__navigation {
 
 .home__campaign-museum {
   color: white;
-
-  .background-container__gradient {
-    background: linear-gradient(180deg, color(turqoise), color(purple));
-  }
 }
 
 .home__campaign-museum__wrapper__text {
@@ -257,7 +250,7 @@ main > section, main > .home__navigation {
   color: color(orange);
   min-height: 300px;
   line-height: 1.5;
-  margin-bottom: 16px;
+  margin-bottom: spacingAgainstBase(1);
   padding: spacingAgainstBase(3) spacingAgainstBase(2) spacingAgainstBase(6) spacingAgainstBase(2);
   position: relative;
   text-transform: uppercase;
@@ -411,7 +404,7 @@ main > section, main > .home__navigation {
 
     img {
       display: block;
-      margin: 16px auto;
+      margin: spacingAgainstBase(1) auto;
       max-width: 100%;
     }
   }

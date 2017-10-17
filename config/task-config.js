@@ -1,7 +1,7 @@
 module.exports = {
   images      : true,
   fonts       : true,
-  svgSprite   : true,
+  svgSprite   : false,
   stylesheets : true,
 
   javascripts: {

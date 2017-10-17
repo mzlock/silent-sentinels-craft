@@ -138,6 +138,7 @@
         svg, img {
           display: block;
           margin: 0 auto;
+          height: 30px;
           width: 30px;
         }
         path {
@@ -189,7 +190,7 @@
         text-decoration: underline;
       }
 
-      img {
+      img, svg {
         display: block;
         margin: 0 auto;
         max-width: 30px;
