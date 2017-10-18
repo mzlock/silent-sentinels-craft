@@ -1,13 +1,13 @@
 {% extends "_layout" %}
-{% set colors = {
-  turqouise: '#024c64',
-  deepTeal: '#008d96',
-  lightTeal: '#16bfc0',
-  purple: '#372745',
-  orange: '#e65621'
-} %}
+
+{% set pageClassName = "home" %}
+{% set dataModule = "HomeScrollNavigation"  %}
+{% set scrollNavigation = true %}
 
 {% block content %}
+
+  {% include "_includes/scroll-navigation.html" %}
+
   <header class="home__header section-padding section" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
       <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
@@ -18,9 +18,9 @@
       <p>Help us build a museum to honor these brave women. We can make sure the sentinels are silent no longer.</p>
     </div>
      <div class="background-container">
+      <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home1.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
     </div>
   </header>
 
@@ -34,16 +34,16 @@
       {% endif %}
     </div>
      <div class="background-container">
+      <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home2.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
     </div>
   </nav>
 
   <section class="home__who section-padding section" data-nav-item="section-2">
     <div class="home__who__inner wrapper wrapper--xsmall">
       <div class="home__who__inner__text">
-        <h2 class="h2" id="section-2"><span class="heading-lead"><span>Who were the</span></span>Silent Sentinels?</h2>
+        <h2 class="h2" id="section-2"><span class="heading-lead">Who were the</span>Silent Sentinels?</h2>
         <nav>
           <a href="/watchvideo">Watch Video</a>
           <a href="/learnmore">Learn About the Sentinels</a>
@@ -60,9 +60,9 @@
       </div>
     </div>
     <div class="background-container">
+      <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.deepTeal}})"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home3.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.deepTeal}})"></div>
     </div>
   </section>
 
@@ -80,9 +80,9 @@
     </div>
 
     <div class="background-container">
+      <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home4.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
     </div>
   </section>
 
@@ -173,9 +173,9 @@
       </div>
     </div>
     <div class="background-container">
+      <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.purple}});"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home5.png')"></div>
       <div class="background-container__noise"></div>
-      <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.purple}});"></div>
     </div>
   </section>
 {% endblock %}

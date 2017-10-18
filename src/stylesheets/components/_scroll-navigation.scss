@@ -1,10 +1,10 @@
 .home__scroll-navigation {
-  position: fixed;
+  background: color(darkPurple);
   bottom: 0;
   left: 0;
-  right: 0;
-  background: color(darkPurple);
   padding: 10px 0;
+  position: fixed;
+  right: 0;
   z-index: 8;
 }
 
@@ -15,15 +15,15 @@
 
 .home__scroll-navigation__inner__links {
   color: color(robinBlue);
-  font-size: 15px;
-  text-transform: uppercase;
   font-family: $font-heading;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  font-size: 15px;
   margin: 0 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 
   &:last-of-type {
-    margin: 0 0 0 16px;
+    margin-right: 0;
   }
 
   &:hover,
@@ -35,14 +35,10 @@
 
 @include breakpoint(max-width 900px) {
   .home__scroll-navigation__inner__links {
-    margin: 0;
     flex: 1 1 33.33%;
     justify-content: space-around;
+    margin: 0;
     text-align: center;
-
-    &:last-of-type {
-      margin: 0;
-    }
   }
 }
 

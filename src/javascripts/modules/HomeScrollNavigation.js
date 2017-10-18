@@ -5,7 +5,7 @@ export default class HomeScrollNavigation {
     this.el = el
     this.setupDOM()
     this.bindEvents()
-    this.intersectionCheck()
+    this.initIntersection()
   }
 
   setupDOM() {
@@ -26,28 +26,25 @@ export default class HomeScrollNavigation {
     this.domTarget.scrollIntoView({ behavior: 'smooth' })
   }
 
-  intersectionCheck() {
-    var options = {
+  initIntersection() {
+    const options = {
       root: null,
-      // rootMargin: '0px',
-      threshold: [0.5]
+      threshold: [0.2, 0.8]
     }
 
-    var observer = new IntersectionObserver(onEntry, options)
+    const observer = new IntersectionObserver(this.onEntry.bind(this), options, options)
 
     this.homeSections.forEach(item => {
       observer.observe(item)
     })
+  }
 
-    let navLinks = this.navLinks
-
-    function onEntry(entries, observer) {
-      entries.map((entry, currentIndex) => {
-        if (entry.isIntersecting) {
-          this.domTarget = document.querySelector(`[href='#${entry.target.dataset.navItem}']`)
-          this.domTarget.classList.toggle('home__scroll-navigation__inner__links--active')
-        }
-      })
-    }
+  onEntry(entries, observer) {
+    entries.map((entry, currentIndex) => {
+      if (entry.isIntersecting) {
+        this.domTarget = document.querySelector(`[href='#${entry.target.dataset.navItem}']`)
+        this.domTarget.classList.toggle('home__scroll-navigation__inner__links--active')
+      }
+    })
   }
 }

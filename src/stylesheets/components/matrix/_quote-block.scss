@@ -25,7 +25,7 @@
   display: block;
 }
 
-.leads {
+.blockquote-leads {
   align-self: center;
   display: block;
   font-family: $font-heading;
@@ -35,12 +35,12 @@
 
 .quote-image__attribution,
 .quote-image__context,
-.leads {
+.blockquote-leads {
   margin-bottom: spacingAgainstBase(0.4);
 }
 
 @include breakpoint(max-width 800px) {
-  .leads {
+  .blockquote-leads {
     width: 100%;
 
     p {

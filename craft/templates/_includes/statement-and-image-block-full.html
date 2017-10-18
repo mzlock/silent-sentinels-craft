@@ -1,12 +1,5 @@
 {% set statementClass = block.flipTextPlacement == 1 ? "statement-flipped" : "" %}
 
-
-{% if block.colorSecondary == "#000000" %}
-  {% set gradient = false %}
-{% else %}
-  {% set gradient = true %}
-{% endif %}
-
 <section class="timeline__block statement-image--full">
   <div class="timeline__block__inner wrapper wrapper--medium {{statementClass}}">
     <div class="statement-image--full__text container--mini">
@@ -16,9 +9,7 @@
   </div>
 
   <div class="background-container">
-    <div class="background__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
-    <div class="background-container__noise"></div>
-    <div class="background-container__gradient" 
+  <div class="background-container__gradient" 
     {% if gradient %}
       style= "background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
     {% else %} 
@@ -26,5 +17,7 @@
     {% endif %}
     >
     </div>
+    <div class="background__image" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background-container__noise"></div>
   </div>
 </section>

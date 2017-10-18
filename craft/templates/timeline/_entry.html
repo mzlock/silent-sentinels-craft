@@ -1,10 +1,6 @@
 {% extends "_layout" %}
 
-{% if entry.colorSecondary == "#000000" %}
-  {% set gradient = false %}
-{% else %}
-  {% set gradient = true %}
-{% endif %}
+{% set pageClassName = "timeline" %}
 
 {% block content %}
   <header class="timeline__header">
@@ -19,9 +15,7 @@
     </div>
 
     <div class="background-container">
-      <div class="background__image background__image--cover" style="background-image: url({{entry.image.first().url}})"> </div>
-      <div class="background-container__noise"></div>
-      <div class="background-container__gradient" 
+     <div class="background-container__gradient" 
         {% if gradient %}
           style= "background: {{entry.colorPrimary}}; 
           background: linear-gradient(180deg,{{entry.colorPrimary}}, {{entry.colorSecondary}});"
@@ -29,6 +23,8 @@
           style= "background: {{entry.colorPrimary}};"
         {% endif %}
       ></div>
+      <div class="background__image background__image--cover" style="background-image: url({{entry.image.first().url}})"> </div>
+      <div class="background-container__noise"></div>
     </div>
   </header>
 

@@ -135,12 +135,14 @@
         position: absolute;
         bottom: 0px;
 
-        svg, img {
+        svg,
+        img {
           display: block;
           margin: 0 auto;
           height: 30px;
           width: 30px;
         }
+
         path {
           fill: color(orange);
         }
@@ -190,7 +192,8 @@
         text-decoration: underline;
       }
 
-      img, svg {
+      img,
+      svg {
         display: block;
         margin: 0 auto;
         max-width: 30px;

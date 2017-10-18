@@ -1,19 +1,13 @@
-{% if block.colorSecondary == "#000000" %}
-  {% set gradient = false %}
-{% else %}
-  {% set gradient = true %}
-{% endif %}
-
 <section class="timeline__block quote-image">
   <div class="timeline__block__inner wrapper section-padding">
     <blockquote>
-      <span class="leads">
+      <span class="blockquote-leads">
         {{ block.leadIn }}
       </span>
       <span class="quote-image__main">
         {{ block.quote }}
       </span>
-      <span class="leads">
+      <span class="blockquote-leads">
         {{ block.leadOut }}
       </span>
       <cite>
@@ -28,14 +22,14 @@
   </div>
 
   <div class="background-container">
-    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
-    <div class="background-container__noise"></div>
-    <div class="background-container__gradient"
+   <div class="background-container__gradient"
     {% if gradient %}
       style="background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
     {% else %}
       style="background: {{block.colorPrimary}};"
     {% endif %}
     ></div>
+    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background-container__noise"></div>
   </div>
 </section>

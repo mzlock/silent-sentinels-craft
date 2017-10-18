@@ -1,9 +1,6 @@
 {% extends "_layout" %}
-{% if entry.colorSecondary == "#000000" %}
-  {% set gradient = false %}
-{% else %}
-  {% set gradient = true %}
-{% endif %}
+
+{% set pageClassName = "sentinel-bio" %}
 
 {% block content %}
 
@@ -32,8 +29,8 @@
 </div>
 
 <div class="background-container">
-  <div class="background-container__noise"></div>
   <div class="background-container__gradient" style="background: linear-gradient(180deg, {{entry.colorPrimary}}, {{entry.colorSecondary}});"></div>
+  <div class="background-container__noise"></div>
 </div>
 
 {% endblock %}

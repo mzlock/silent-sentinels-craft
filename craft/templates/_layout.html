@@ -1,58 +1,43 @@
-{#
- # Layout template
- # ---------------
- #}
+{% set colors = {
+  turqouise: '#024c64',
+  deepTeal: '#008d96',
+  lightTeal: '#16bfc0',
+  purple: '#372745',
+  orange: '#e65621'
+} %}
 
-{% if craft.request.path == "" %}
-  {% set className = "home" %}
-{% endif %}
-
-{% if craft.request.path == "the-arrests" or craft.request.path == "woodrow-wilson-the-19th-amendment" or craft.request.path == "the-beginning-of-the-movement" or craft.request.path ==  "the-night-of-terror" %}
-  {% set className = "timeline" %}
-  {% elseif craft.request.path == "" %}
-    {% set className = "home" %}
-    {% set dataModule = "HomeScrollNavigation" %}
-    {% set scrollNavigation = true %}
-  {% elseif craft.request.path == "sentinel-bio" %}
-    {% set className = "sentinel-bio" %}
-  {% else %}
-    {% set className = "page" %}
-{% endif %}
+{% set dataModule = dataModule | default  %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-  <link rel="stylesheet" href="{{ 'assets/stylesheets/app.css' | gulp_rev }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+    <link rel="stylesheet" href="{{ 'assets/stylesheets/app.css' | gulp_rev }}">
 
-  <script>
-    var html = document.querySelector('html');
-    html.setAttribute('data-js', 'hasJs');
-  </script>
-</head>
+    <script>
+      var html = document.querySelector('html');
+      html.setAttribute('data-js', 'hasJs');
+    </script>
+  </head>
 
-<body>
-  {% include "_includes/navigation.html" %}
+  <body>
+    {% include "_includes/navigation.html" %}
 
-  <div id="site-container"
-    {% if dataModule %}
-      data-module="{{dataModule}}"
-    {% endif %}
-  >
-    <main class="{{className}}">
-      {% block content %}
-      {% endblock %}
-    </main>
+    <div id="site-container"
+      {% if dataModule %}
+        data-module="{{dataModule}}"
+      {% endif %}
+    >
+      <main class="{{pageClassName}}">
+        {% block content %}
+        {% endblock %}
+      </main>
+    </div>
 
-    {% if scrollNavigation == true %}
-      {% include "_includes/scroll-navigation.html" %}
-    {% endif %}
-  </div>
+    {% include "_includes/footer.html" %}
 
-  {% include "_includes/footer.html" %}
-
-  <script src="{{ 'assets/javascripts/app.js' | gulp_rev }}"></script>
-</body>
+    <script src="{{ 'assets/javascripts/app.js' | gulp_rev }}"></script>
+  </body>
 </html>

@@ -1,15 +1,16 @@
-main > section, main > .home__navigation {
+main > section,
+main > .home__navigation {
   position: relative;
 }
 
 .background-container {
-  width: 100%;
+  bottom: 0;
   height: 100%;
-  position: absolute;
   left: 0;
+  position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
+  width: 100%;
   z-index: 1;
 }
 
@@ -244,13 +245,13 @@ main > section, main > .home__navigation {
 .museum__quote blockquote {
   @include fluid-type(600px, 1400px, 24px, 27px);
   background-color: white;
+  color: color(orange);
   display: flex;
+  line-height: 1.5;
   flex-direction: column;
   justify-content: center;
-  color: color(orange);
-  min-height: 300px;
-  line-height: 1.5;
   margin-bottom: spacingAgainstBase(1);
+  min-height: 300px;
   padding: spacingAgainstBase(3) spacingAgainstBase(2) spacingAgainstBase(6) spacingAgainstBase(2);
   position: relative;
   text-transform: uppercase;
