@@ -70,10 +70,46 @@
   max-width: 400px;
 }
 
+
 .background__image {
-  &.background__image--cover {
-    background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  &.quote-image__image-container__image {
+    background-position-x: 70%;
+    bottom: 0;
   }
+
+  &.fact-image--full__image-container__image {
+    background-position-x: center;
+    top: 0;
+  }
+
+  &.background__image--cover {
+    background-position: cover;
+  }
+
+  &.background__image--contain {
+    background-position: contain;
+  }
+}
+
+.background__image--cover {
+  background-size: cover;
+}
+
+.background__image--contain {
+  background-size: contain;
+}
+
+.background__image--centerY {
+  background-position-y: center;
 }
 
 .margin-center {

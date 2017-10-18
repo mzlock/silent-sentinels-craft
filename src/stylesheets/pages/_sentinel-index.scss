@@ -1,5 +1,11 @@
 .sentinel-bio {
   color: white;
+  min-height: 80vh;
+  
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 16vh;
+  }
 }
 
 .sentinel-bio__wrapper__header__inner {

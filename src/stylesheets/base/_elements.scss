@@ -33,6 +33,10 @@ html {
   overflow-x: hidden;
 }
 
+main {
+  position: relative;
+}
+
 @include breakpoint(min-width 1201px) {
   .mobile-only {
     display: none;
