@@ -1,5 +1,8 @@
 {% extends "_layout" %}
 
+{% set homepageEntry = craft.entries.section('homepage').first() %}
+{% set timelineEntry = craft.entries.section('timeline') %} 
+
 {% set pageClassName = "home" %}
 {% set dataModule = "HomeScrollNavigation"  %}
 {% set scrollNavigation = true %}
@@ -13,9 +16,7 @@
       <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
       <h1 class="h1" id="section-1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
       {# <div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div> #}
-      <p>The Silent Sentinels were 72 women who picketed, protested, and even went to prison, whatever it took to get women the
-        right to vote. Taunts, beatings, and torure did not deter them.</p>
-      <p>Help us build a museum to honor these brave women. We can make sure the sentinels are silent no longer.</p>
+      {{ homepageEntry.siteDescription }}
     </div>
      <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
@@ -26,9 +27,8 @@
 
   <nav class="home__navigation">
     <div class="home__navigation__inner wrapper component-links">
-      {% set entry = craft.entries.section('timeline') %} 
       {% if not craft.request.isLivePreview %} 
-        {% for item in entry %}
+        {% for item in timelineEntry %}
           <a class="button" href="{{item.getUrl()}}">{{item.titleText}}</a> 
         {% endfor %}
       {% endif %}
@@ -48,12 +48,7 @@
           <a href="/watchvideo">Watch Video</a>
           <a href="/learnmore">Learn About the Sentinels</a>
         </nav>
-        <p>The Silent Sentinels were a group of women in favor of women's suffrage organized by 
-          <a href="http://lmgtfy.com/?q=alice+paul">Alice Paul</a> 
-          and the National Woman's Party. They protested in front of the White House during Woodrow Wilson's presidency starting
-          on January 10, 1917. The women protested for six days a week until June 4, 1919 when the Nineteenth Amendment to
-          the United States Constitution was passed both by the House of Representatives and the Senate.
-        </p>
+        {{ homepageEntry.whoDescription }}
       </div>
       <div class="home__who__inner__image-container">
         <div class="home__who__inner__image-container__image" style="background-image: url(./assets/images/home3.png);"> </div>
@@ -90,11 +85,7 @@
     <div class="home__campaign-museum__wrapper wrapper wrapper--medium">
       <div class="home__campaign-museum__wrapper__text">
         <h2 class="h2" id="section-3">The Campaign & Museum</h2>
-        <p>The Women’s Suffrage Museum’s mission is to portray women’s struggle for equal rights and the opportunity for a vote
-          in our democracy. The site is considered hallowed ground for the suffragists and for the modern women’s movement. It
-          will provide historical context to the movement toward franchise and also provide individual stories of the women who
-          helped bring about the ratification of the 19th Amendment to the U.S. Constitution.
-        </p>
+        {{ homepageEntry.campaignDescription }}
       </div>
       <div class="home__campaign-museum__image-container">
         <div class="home__campaign-museum__image-container__image" style="background-image: url(./assets/images/home3.png);"> </div>
@@ -112,14 +103,14 @@
           <li class="museum__quote is-hiding" id="quote-2">
             <article>
               <blockquote class="home__campaign-museum__quotes__quote--hidden">
-                Alternate quotation #2 goes here
+                I don't really like conflict at all, and I really find conflict pretty devastating. I try to avoid it at all costs.
               </blockquote>
             </article>
           </li>
           <li class="museum__quote is-hiding" id="quote-3">
             <article>
               <blockquote class="home__campaign-museum__quotes__quote--hidden">
-                Alternate quotation #3 goes here
+                Let us make our future now, and let us make our dreams tomorrow's reality.
               </blockquote>
             </article>
           </li>

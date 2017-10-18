@@ -19,6 +19,9 @@ export default class HomeQuoteSwap {
   }
 
   hideAll() {
+    this.quoteSayers.map(sayer => {
+      sayer.classList.remove('cite__person--active')
+    })
     this.quotations.map(quote => {
       quote.classList.add('is-hiding')
     })
@@ -30,7 +33,7 @@ export default class HomeQuoteSwap {
     const quoteTriggered = this.quotations.find(quote => quote.getAttribute('id') === quoteId)
 
     this.hideAll()
-
+    sayer.classList.add('cite__person--active')
     quoteTriggered.classList.remove('is-hiding')
   }
 }

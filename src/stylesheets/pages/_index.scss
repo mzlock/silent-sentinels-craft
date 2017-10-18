@@ -276,6 +276,7 @@ main > .home__navigation {
     font-family: $font-special;
   }
 }
+
 .home__campaign-museum__quotes__quote__cite {
   display: flex;
   justify-content: space-between;
@@ -296,15 +297,37 @@ main > .home__navigation {
 
   span {
     font-family: $font-heading;
+    padding-bottom: 1rem;
     position: relative;
     text-align: center;
+    transition: all 0.6s ease;
     z-index: 2;
+  }
+
+  &::after {
+    background-color: color(purple);
+    content:"";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease;
+    width: 100%;
+    z-index: 1;
   }
 }
 
 .cite__person--active {
   span {
     align-self: center;
+    padding-bottom: 0;
+  }
+
+  &::after {
+    background-color: color(orange);
+    opacity: 0.85;
   }
 }
 
