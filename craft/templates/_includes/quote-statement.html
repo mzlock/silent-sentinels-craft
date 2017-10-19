@@ -11,7 +11,8 @@
   <div class="background-container">
     <div class="background-container__gradient"
       {% if gradient %}
-        style="background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
+        style="background: {{block.colorPrimary}};
+        background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
       {% else %}
         style="background: {{block.colorPrimary}};"
       {% endif %}

@@ -1,6 +1,21 @@
+{% if block.colorSecondary == "#000000" %}
+  {% set gradient = false %}
+{% else %}
+  {% set gradient = true %}
+{% endif %}
+
+{% switch block.backgroundPosition %}
+  {% case 'left' %}
+    {% set backgroundPosition = 'background__image--left' %}
+  {% case 'right' %}
+    {% set backgroundPosition = 'background__image--right' %}
+  {% case 'center' %}
+    {% set backgroundPosition = 'background__image--center' %}
+{% endswitch %}
+
 <section class="timeline__block fact-image--full">
   <div class="timeline__block__inner wrapper wrapper--medium section-padding">
-    <div class="fact-image--full__statement container--xsmall">
+    <div class="fact-image--full__statement container--small">
       <h2 class="h2">{{ block.fact | striptags('<strong><em><br>')|raw }}</h2>
       <p>{{ block.statement }}</p>
     </div>
@@ -13,7 +28,7 @@
       style="background: {{block.colorPrimary}};"
     {% endif %}
     ></div>
-    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background__image background__image--contain {{backgroundPosition}}" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
     <div class="background-container__noise"></div>
   </div>
 </section>

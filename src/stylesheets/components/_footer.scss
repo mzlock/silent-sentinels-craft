@@ -65,6 +65,7 @@
 
     svg {
       fill: color(orange);
+      max-width: 40px;
     }
   }
 }
@@ -104,6 +105,14 @@
   li {
     flex: 0 0 50%;
     margin-bottom: spacingAgainstBase(2);
+  }
+}
+
+.footer__section--3 {
+  nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   }
 }
 

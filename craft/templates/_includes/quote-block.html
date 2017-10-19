@@ -1,3 +1,12 @@
+{% switch block.backgroundPosition %}
+  {% case 'left' %}
+    {% set backgroundPosition = 'background__image--left' %}
+  {% case 'right' %}
+    {% set backgroundPosition = 'background__image--right' %}
+  {% case 'center' %}
+    {% set backgroundPosition = 'background__image--center' %}
+{% endswitch %}
+
 <section class="timeline__block quote-image">
   <div class="timeline__block__inner wrapper section-padding">
     <blockquote>
@@ -29,7 +38,7 @@
       style="background: {{block.colorPrimary}};"
     {% endif %}
     ></div>
-    <div class="background__image background__image--contain" style="background-image: url('{{ block.image.first().getUrl }}')"></div>
+    <div class="background__image background__image--contain {{backgroundPosition}}" style="background-image: url('{{ block.image.first().getUrl('mobileImage') }}')"></div>
     <div class="background-container__noise"></div>
   </div>
 </section>

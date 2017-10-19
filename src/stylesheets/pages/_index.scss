@@ -103,6 +103,7 @@ main > .home__navigation {
       font-weight: 600;
       text-decoration: none;
       position: relative;
+
       &:hover,
       &:focus {
         &:after {
@@ -125,13 +126,12 @@ main > .home__navigation {
   }
 
   nav {
+    align-self: flex-end;
     display: flex;
     flex-direction: row;
-    max-width: 470px;
     justify-content: space-between;
-    margin-left: 12.5%;
-    align-self: flex-end;
     margin-bottom: spacingAgainstBase(1);
+    max-width: 470px;
 
     a {
       border: 4px solid color(yellow);
@@ -143,21 +143,30 @@ main > .home__navigation {
       text-transform: uppercase;
     }
   }
+
+  .float-image {
+    left: -30%;
+    top: 0;
+    width: 50%;
+  }
 }
 
 .home__who__inner__text {
   p {
     margin-bottom: 32px;
   }
-
-  @include breakpoint(min-width 900px) {
-    p {
-      margin-left: percentage(100/800);
-    }
-  }
 }
 
-//
+@include breakpoint(min-width 900px) {
+  .home__who {
+    nav, p {
+      left: 12.5%;
+      position: relative;
+    }
+  }
+  
+}
+
 @include breakpoint(max-width 1000px) {
   .home__who {
     margin: 0 auto;
@@ -189,6 +198,12 @@ main > .home__navigation {
         text-transform: uppercase;
       }
     }
+
+    .float-image {
+      left: initial;
+      right: 0%;
+      width: 200px;
+    }
   }
 }
 
@@ -196,6 +211,13 @@ main > .home__navigation {
   @include fluid-type(600px, 1400px, 24px, 33px);
   background-color: color(purple);
   padding: spacingAgainstBase(6) 0 spacingAgainstBase(4) 0;
+
+  .float-image {
+    left: 0;
+    min-width: 1500px;
+    top: -50px;
+    z-index: 1;
+  }
 }
 
 .home__quote__inner {
@@ -226,10 +248,20 @@ main > .home__navigation {
   }
 }
 
+.float-image {
+  position: absolute;
+  z-index: -1;
+}
+
 // refactor
 
 .home__campaign-museum {
   color: white;
+
+  .float-image {
+    right: 0;
+    top: 50px;
+  }
 }
 
 .home__campaign-museum__wrapper__text {

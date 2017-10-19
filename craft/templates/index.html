@@ -15,7 +15,6 @@
     <div class="home__header__inner wrapper">
       <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
       <h1 class="h1" id="section-1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
-      {# <div class="background__image" style="background-image: url(./assets/images/home3.png);"> </div> #}
       {{ homepageEntry.siteDescription }}
     </div>
      <div class="background-container">
@@ -40,10 +39,11 @@
     </div>
   </nav>
 
-  <section class="home__who section-padding section" data-nav-item="section-2">
-    <div class="home__who__inner wrapper wrapper--xsmall">
-      <div class="home__who__inner__text">
+  <section class="home__who section" data-nav-item="section-2">
+    <div class="home__who__inner wrapper wrapper--small section-padding">
+      <div class="home__who__inner__text container--xsmall">
         <h2 class="h2" id="section-2"><span class="heading-lead">Who were the</span>Silent Sentinels?</h2>
+        <img class="float-image" src="./assets/images/home3.png" alt="">
         <nav>
           <a href="/watchvideo">Watch Video</a>
           <a href="/learnmore">Learn About the Sentinels</a>
@@ -77,6 +77,7 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home4.png')"></div>
+      <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt="">
       <div class="background-container__noise"></div>
     </div>
   </section>
@@ -86,6 +87,7 @@
       <div class="home__campaign-museum__wrapper__text">
         <h2 class="h2" id="section-3">The Campaign & Museum</h2>
         {{ homepageEntry.campaignDescription }}
+        <img class="float-image" src="./assets/images/home-page/home5.1.png" alt="">
       </div>
       <div class="home__campaign-museum__image-container">
         <div class="home__campaign-museum__image-container__image" style="background-image: url(./assets/images/home3.png);"> </div>
