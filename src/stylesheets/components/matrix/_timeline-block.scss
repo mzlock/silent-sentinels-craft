@@ -46,11 +46,13 @@
   position: relative;
   width: 100%;
 
-  @include breakpoint(max-width 800px) {
-    width: 100%;
-  }
-
   @include breakpoint(max-width 1000px) {
     min-height: 400px;
+  }
+}
+
+@include breakpoint(max-width 800px) {
+  .timeline__header__inner__text {
+    margin-left: 0;
   }
 }

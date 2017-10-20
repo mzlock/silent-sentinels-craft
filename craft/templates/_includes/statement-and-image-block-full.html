@@ -1,10 +1,10 @@
 {% switch block.backgroundPosition %}
   {% case 'left' %}
-    {% set backgroundPosition = 'background__image--left' %}
+    {% set backgroundPosition = 'background__img--left' %}
   {% case 'right' %}
-    {% set backgroundPosition = 'background__image--right' %}
+    {% set backgroundPosition = 'background__img--right' %}
   {% case 'center' %}
-    {% set backgroundPosition = 'background__image--center' %}
+    {% set backgroundPosition = 'background__img--center' %}
 {% endswitch %}
 
 {% set statementClass = block.flipTextPlacement ? "statement-flipped" : "" %}
@@ -18,15 +18,22 @@
   </div>
 
   <div class="background-container">
-  <div class="background-container__gradient" 
-    {% if gradient %}
-      style= "background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
-    {% else %} 
-      style= "background: {{block.colorPrimary}};"
-    {% endif %}
+    <div class="background-container__gradient"
+      {% if gradient %}
+        style= "background: {{block.colorPrimary}}; background: linear-gradient(180deg, {{block.colorPrimary}}, {{block.colorSecondary}});"
+      {% else %} 
+        style= "background: {{block.colorPrimary}};"
+      {% endif %}
     >
     </div>
-    <div class="background__image background__image--contain {{backgroundPosition}}" style="background-image: url('{{ block.image.first().getUrl() }}')"></div>
+    {# <div class="background__image background__image--contain {{backgroundPosition}}" style="background-image: url('{{ block.image.first().getUrl() }}')"></div> #}
+    <picture>
+      <source srcset="{{block.image.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+      <source srcset="{{block.image.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+      <source srcset="{{block.image.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+      <source srcset="{{block.image.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
+      <img class="background__img {{backgroundPosition}}" srcset="{{block.image.first().getUrl()}}">
+    </picture>
     <div class="background-container__noise"></div>
   </div>
 </section>

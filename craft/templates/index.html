@@ -11,15 +11,21 @@
 
   {% include "_includes/scroll-navigation.html" %}
 
-  <header class="home__header section-padding section" data-nav-item="section-1">
+  <header class="home__header section-padding section text-treatment" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
       <span class="heading-lead"><span>Before Hillary,</span> <span>Before Women's Lib,</span> <span>There Were The...</span></span>
       <h1 class="h1" id="section-1"><img src="./assets/images/logo-silentsentinels.png" alt="Silent Sentinels"></h1>
       {{ homepageEntry.siteDescription }}
     </div>
-     <div class="background-container">
+    <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
-      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home1.png')"></div>
+      <picture>
+        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
+        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage1.first().getUrl()}}">
+      </picture>
       <div class="background-container__noise"></div>
     </div>
   </header>
@@ -34,12 +40,18 @@
     </div>
      <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
-      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home2.png')"></div>
+      <picture>
+        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
+        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage2.first().getUrl()}}">
+      </picture>
       <div class="background-container__noise"></div>
     </div>
   </nav>
 
-  <section class="home__who section" data-nav-item="section-2">
+  <section class="home__who section text-treatment" data-nav-item="section-2">
     <div class="home__who__inner wrapper wrapper--small section-padding">
       <div class="home__who__inner__text container--xsmall">
         <h2 class="h2" id="section-2"><span class="heading-lead">Who were the</span>Silent Sentinels?</h2>
@@ -56,12 +68,18 @@
     </div>
     <div class="background-container">
       <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.deepTeal}})"></div>
-      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home3.png')"></div>
+      <picture>
+        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
+        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage3.first().getUrl()}}">
+      </picture>
       <div class="background-container__noise"></div>
     </div>
   </section>
 
-  <section class="home__quote">
+  <section class="home__quote text-treatment">
     <div class="home__quote__inner wrapper">
       <blockquote>the Government must not think that they can stop this agitation.
         <span>It will go on.</span> 
@@ -76,15 +94,22 @@
 
     <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
-      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home4.png')"></div>
-      <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt="">
+      <picture>
+        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('mobileImageAlt')}}" media="(max-width: 600px)">
+        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage4.first().getUrl()}}">
+      </picture>
+      {# to fix in post-release #}
+      {# <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt=""> #}
       <div class="background-container__noise"></div>
     </div>
   </section>
 
   <section class="home__campaign-museum section-padding section" data-nav-item="section-3">
     <div class="home__campaign-museum__wrapper wrapper wrapper--medium">
-      <div class="home__campaign-museum__wrapper__text">
+      <div class="home__campaign-museum__wrapper__text text-treatment">
         <h2 class="h2" id="section-3">The Campaign & Museum</h2>
         {{ homepageEntry.campaignDescription }}
         <img class="float-image" src="./assets/images/home-page/home5.1.png" alt="">
@@ -167,7 +192,13 @@
     </div>
     <div class="background-container">
       <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.purple}});"></div>
-      <div class="background__image background__image--cover" style="background-image: url('./assets/images/home-page/home5.png')"></div>
+      <picture>
+        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
+        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
+        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
+        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
+        <img class="background__img background__img--contain {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage5.first().getUrl()}}">
+      </picture>
       <div class="background-container__noise"></div>
     </div>
   </section>

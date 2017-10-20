@@ -78,14 +78,14 @@ main > .home__navigation {
   color: white;
 
   small {
-    display: block;
     @include fluid-type(600px, 1400px, 20px, 24px);
+    display: block;
     font-family: $font-special;
     flex: 0 0 35%;
     line-height: 1.2;
+    margin-bottom: 20px;
     min-width: 250px;
     transform: rotate(-2deg);
-    margin-bottom: 20px;
   }
 
   span {
@@ -134,10 +134,10 @@ main > .home__navigation {
     max-width: 470px;
 
     a {
+      @include fluid-type(600px, 1400px, 16px, 20px);
       border: 4px solid color(yellow);
       color: color(yellow);
-      padding: 10px 25px;
-      @include fluid-type(600px, 1400px, 16px, 20px);
+      padding: 10px;
       font-family: $font-heading;
       text-decoration: none;
       text-transform: uppercase;
@@ -164,7 +164,6 @@ main > .home__navigation {
       position: relative;
     }
   }
-  
 }
 
 @include breakpoint(max-width 1000px) {
@@ -178,25 +177,6 @@ main > .home__navigation {
       margin: 0 auto;
       max-width: 100%;
       min-width: 300px;
-    }
-
-    nav {
-      align-self: flex-end;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin: 0 auto spacingAgainstBase(1) auto;
-      max-width: 100%;
-
-      a {
-        @include fluid-type(600px, 1400px, 16px, 20px);
-        border: 4px solid color(yellow);
-        color: color(yellow);
-        font-family: $font-heading;
-        padding: 10px 25px;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
     }
 
     .float-image {
@@ -473,6 +453,13 @@ main > .home__navigation {
 @include breakpoint(max-width 900px) {
   .home__quote__inner {
     right: 0%;
+  }
+
+  .home__campaign-museum {
+    .float-image {
+      opacity: 0.6;
+      filter: blur(1px);
+    }
   }
 }
 

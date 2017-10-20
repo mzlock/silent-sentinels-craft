@@ -83,6 +83,65 @@
   max-width: 350px;
 }
 
+.background__img {
+  position: absolute;
+  max-width: 1900px;
+  min-width: 400px;
+  top: 0;
+
+  &.background__img--contain {
+    height: auto;
+    width: 100%;
+  } 
+}
+
+.background__img--left {
+  left: 20%;
+}
+
+.background__img--right {
+  right: 20%;
+}
+
+.background__img--center {
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+}
+
+@include breakpoint(min-width 1441px) {
+  .background__img {
+    height: 100%;
+  }
+}
+
+@include breakpoint(max-width 1440px) {
+  .background__img {
+    height: 100%;
+    width: auto;
+
+    &.background__img--contain {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .background__img--left {
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+  }
+  
+  .background__img--right {
+    left: 0;
+    margin: 0 auto;
+    right: 0;
+  }
+}
+
+
+// need to change timeblocks for these classes. Also need to remove the margin: 0 auto; from the base class.
+
 
 .background__image {
   background-repeat: no-repeat;
@@ -137,4 +196,8 @@
 
 .margin-center {
   margin: 0 auto;
+}
+
+.text-treatment {
+  text-shadow: 2px 2px 6px rgba(37, 37, 37, 0.2);
 }
