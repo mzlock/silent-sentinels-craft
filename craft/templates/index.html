@@ -7,9 +7,31 @@
 {% set dataModule = "HomeScrollNavigation"  %}
 {% set scrollNavigation = true %}
 
+{% set jifUrl = jifUrl | default %}
+
 {% block content %}
 
   {% include "_includes/scroll-navigation.html" %}
+
+  <h1>{{ 'gif' | gifToJif }}</h1>
+  <h2>{{ craft.responseJif.pasteJif('bye') }}</h2>
+  <img src="{{ craft.responseJif.pasteJif('bye') }}">
+{# Plugin Stuff #}
+  {% if jifUrl %}
+    <img src="{{ jifUrl }}">
+  {% endif %}
+{# Plugin Stuff #}
+  <form method="post" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="responseJif/getJif">
+    <select name="pickJif">
+      <option value="welcome">Welcome</option>
+      <option value="bye">Bye</option>
+      <option value="happy">Happy</option>
+    </select>
+    <input type="hidden" name="redirect" value="/the-night-of-terror">
+    <input type="submit" value="Submit">
+  </form>
 
   <header class="home__header section-padding section" data-nav-item="section-1">
     <div class="home__header__inner wrapper">

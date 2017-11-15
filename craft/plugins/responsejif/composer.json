@@ -1,0 +1,14 @@
+{
+	"name": "/responsejif",
+	"description": "Responds with a relevant Jif",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Benjamin Modayil",
+			"homepage": "www.modayil.me"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

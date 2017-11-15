@@ -1,0 +1,14 @@
+{
+	"name": "benjaminmodayil/giftojif",
+	"description": "Translates gif to jif",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Benjamin Modayil",
+			"homepage": "www.modayil.me"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

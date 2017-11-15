@@ -1,0 +1,39 @@
+{#
+/**
+ * Response Jif plugin for Craft CMS
+ *
+ * Response Jif Settings.twig
+ *
+ * @author    Benjamin Modayil
+ * @copyright Copyright (c) 2017 Benjamin Modayil
+ * @link      www.modayil.me
+ * @package   ResponseJif
+ * @since     1
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Welcome Jif',
+    instructions: 'Enter some setting here.',
+    id: 'welcomeJif',
+    name: 'welcomeJif', 
+    value: settings['welcomeJif']})
+}}
+
+{{ forms.textField({
+    label: 'Goodbye Jif',
+    instructions: 'Enter some setting here.',
+    id: 'byeJif',
+    name: 'byeJif', 
+    value: settings['byeJif']})
+}}
+
+{{ forms.textField({
+    label: 'Happy Jif',
+    instructions: 'Enter some setting here.',
+    id: 'happyJif',
+    name: 'happyJif', 
+    value: settings['happyJif']})
+}}
