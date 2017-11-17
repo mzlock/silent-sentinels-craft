@@ -16,7 +16,7 @@
 
     <div class="background-container">
      <div class="background-container__gradient" 
-        {% if gradient %}
+        {% if gradient is defined and gradient is not empty %}
           style= "background: {{entry.colorPrimary}}; 
           background: linear-gradient(180deg,{{entry.colorPrimary}}, {{entry.colorSecondary}});"
         {% else %} 

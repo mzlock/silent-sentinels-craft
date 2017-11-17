@@ -1,5 +1,7 @@
 {% extends "_layout" %}
 
+{# {% requireLogin %} #}
+
 {% set homepageEntry = craft.entries.section('homepage').first() %}
 {% set timelineEntry = craft.entries.section('timeline') %} 
 
@@ -8,6 +10,18 @@
 {% set scrollNavigation = true %}
 
 {% block content %}
+
+  {% macro pictureSource(image, sizeObj, minOrMax, media) %}
+    <source srcset="{{ image.first().getUrl(sizeObj) }}" media="({{ minOrMax }}-width: {{ media }}px)">
+  {% endmacro %}
+
+{% set mobileImageCenter = {
+    mode: 'crop',
+    width: 601,
+    height: 701,
+    quality: 90,
+    position: 'top-center'
+} %}
 
   {% include "_includes/scroll-navigation.html" %}
 
@@ -20,11 +34,11 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.orange }}"></div>
       <picture>
-        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
-        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
-        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
-        <source srcset="{{homepageEntry.sectionImage1.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
-        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage1.first().getUrl()}}">
+        {{ _self.pictureSource(homepageEntry.sectionImage1, 'cinemaImage', 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage1, 'laptopImage', 'min', 1440) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage1, 'tabletImage', 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage1, mobileImageCenter, 'max', 600) }}
+        <img class="background__img absolute-center max-width-img-infinite" srcset="{{ homepageEntry.sectionImage1.first().getUrl() }}">
       </picture>
       <div class="background-container__noise"></div>
     </div>
@@ -34,18 +48,18 @@
     <div class="home__navigation__inner wrapper component-links">
       {% if not craft.request.isLivePreview %} 
         {% for item in timelineEntry %}
-          <a class="button" href="{{item.getUrl()}}">{{item.titleText}}</a> 
+          <a class="button button--white button--big" href="{{item.getUrl()}}">{{item.titleText}}</a> 
         {% endfor %}
       {% endif %}
     </div>
      <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <picture>
-        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
-        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
-        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
-        <source srcset="{{homepageEntry.sectionImage2.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
-        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage2.first().getUrl()}}">
+        {{ _self.pictureSource(homepageEntry.sectionImage2, 'cinemaImage', 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage2, 'laptopImage', 'min', 1440) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage2, 'tabletImage', 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage2, mobileImageCenter, 'max', 600) }}
+        <img class="background__img absolute-center max-width-img-medium" srcset="{{homepageEntry.sectionImage2.first().getUrl()}}">
       </picture>
       <div class="background-container__noise"></div>
     </div>
@@ -57,8 +71,8 @@
         <h2 class="h2" id="section-2"><span class="heading-lead">Who were the</span>Silent Sentinels?</h2>
         <img class="float-image" src="./assets/images/home3.png" alt="">
         <nav>
-          <a href="/watchvideo">Watch Video</a>
-          <a href="/learnmore">Learn About the Sentinels</a>
+          <a href="/watchvideo" class="button button--yellow button--small">Watch Video</a>
+          <a href="/learnmore" class="button button--yellow button--small">Learn About the Sentinels</a>
         </nav>
         {{ homepageEntry.whoDescription }}
       </div>
@@ -69,11 +83,11 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.deepTeal}})"></div>
       <picture>
-        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
-        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
-        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
-        <source srcset="{{homepageEntry.sectionImage3.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
-        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage3.first().getUrl()}}">
+        {{ _self.pictureSource(homepageEntry.sectionImage3, 'cinemaImage', 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage3, 'laptopImage', 'min', 1440) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage3, 'tabletImage', 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage3, mobileImageCenter, 'max', 600) }}
+        <img class="background__img max-width-img-infinite background__img--absolute-right" srcset="{{homepageEntry.sectionImage3.first().getUrl()}}">
       </picture>
       <div class="background-container__noise"></div>
     </div>
@@ -95,11 +109,11 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <picture>
-        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
-        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
-        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
-        <source srcset="{{homepageEntry.sectionImage4.first().getUrl('mobileImageAlt')}}" media="(max-width: 600px)">
-        <img class="background__img {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage4.first().getUrl()}}">
+        {{ _self.pictureSource(homepageEntry.sectionImage4, 'cinemaImage', 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, 'laptopImage', 'min', 1440) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, 'tabletImage', 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, mobileImage1, 'max', 600) }}
+        <img class="background__img" srcset="{{homepageEntry.sectionImage4.first().getUrl()}}">
       </picture>
       {# to fix in post-release #}
       {# <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt=""> #}
@@ -143,19 +157,19 @@
           </li>
         </ul>
         <ul class="home__campaign-museum__quotes__quote__cite">
-          <li aria-controls="quote-1" class="home__campaign-museum__quotes__quote__cite__person cite__person--active">
+          <li aria-controls="quote-1" class="home__campaign-museum__quotes__quote__cite__person cite__person--active" tabindex="0">
             <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
               <img src="./assets/images/quote-pelosi.png" alt="">
             </div>
             <span>Nancy Pelosi</span>
           </li>
-          <li aria-controls="quote-2" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive">
+          <li aria-controls="quote-2" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive" tabindex="0">
             <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
               <img src="./assets/images/quote-williams.png" alt="">
             </div>
             <span>Jessica Williams</span>
           </li>
-          <li aria-controls="quote-3" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive">
+          <li aria-controls="quote-3" class="home__campaign-museum__quotes__quote__cite__person cite__person--inactive" tabindex="0">
             <div class="home__campaign-museum__quotes__quote__cite__person__background-image">
               <img src="./assets/images/quote-yousafzai.png" alt="">
             </div>
@@ -193,11 +207,11 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background: linear-gradient(180deg, {{colors.turqouise}}, {{colors.purple}});"></div>
       <picture>
-        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
-        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
-        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('tabletImage')}}" media="(min-width: 601px)">
-        <source srcset="{{homepageEntry.sectionImage5.first().getUrl('mobileImage')}}" media="(max-width: 600px)">
-        <img class="background__img background__img--contain {{backgroundPosition}}" srcset="{{homepageEntry.sectionImage5.first().getUrl()}}">
+        {{ _self.pictureSource(homepageEntry.sectionImage5, 'cinemaImage', 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage5, 'laptopImage', 'min', 1440) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage5, 'tabletImage', 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage5, 'mobileImage', 'max', 600) }}
+        <img class="background__img max-width-img-infinite" srcset="{{homepageEntry.sectionImage5.first().getUrl()}}">
       </picture>
       <div class="background-container__noise"></div>
     </div>

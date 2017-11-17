@@ -6,7 +6,7 @@
   "prettier.semi": false,
   "editor.renderWhitespace": "all",
   "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "prettier.printWidth": 100,
   "csscomb.formatOnSave": false,
   "css.validate": true,
@@ -16,5 +16,10 @@
   "workbench.colorTheme": "Material Palenight",
   "files.associations": {
     "*.html": "twig"
-  }
+  },
+  "prettier.cssEnable": [
+    "css",
+    "less",
+    "scss"
+  ]
 }

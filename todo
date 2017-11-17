@@ -17,7 +17,9 @@
 
 
 
+TODO:
 
+Re-enable login on general.php && Index Page
 
 * heading font on firefox not working
 * need svg or purple fill png logo for mobile menu (fill tool does not do well)
@@ -26,3 +28,16 @@
 3. Missing Page Navigation.
 
 9. make a class for buttons.
+
+
+// TODO:
+// images #1
+// animation ✅
+// bio pages sizing
+// nav item hover color -> white ✅
+
+Accessibility
+// skip to main content
+// mobile nav must open when focused on ✅
+
+// create a height over width and a width over height class

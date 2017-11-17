@@ -15,6 +15,7 @@ export default class HomeQuoteSwap {
   bindEvents() {
     this.quoteSayers.map(sayer => {
       sayer.addEventListener('click', this.triggerQuoteChange.bind(this))
+      sayer.addEventListener('keyup', this.triggerQuoteChangeKeyboard.bind(this))
     })
   }
 
@@ -25,6 +26,12 @@ export default class HomeQuoteSwap {
     this.quotations.map(quote => {
       quote.classList.add('is-hiding')
     })
+  }
+
+  triggerQuoteChangeKeyboard(e) {
+    if (e.keyCode === 13) {
+      this.triggerQuoteChange(e)
+    }
   }
 
   triggerQuoteChange(e) {

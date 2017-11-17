@@ -85,14 +85,22 @@
 
 .background__img {
   position: absolute;
-  max-width: 1900px;
   min-width: 400px;
+  max-width: none;
   top: 0;
 
   &.background__img--contain {
     height: auto;
-    width: 100%;
-  } 
+    // width: 100%;
+  }
+
+  &.max-width-img-medium {
+    max-width: 1600px;
+  }
+
+  &.max-width-img-large {
+    max-width: 1900px;
+  }
 }
 
 .background__img--left {
@@ -106,6 +114,10 @@
 .background__img--center {
   left: 0;
   margin: 0 auto;
+  right: 0;
+}
+
+.background__img--absolute-right {
   right: 0;
 }
 
@@ -131,7 +143,7 @@
     margin: 0 auto;
     right: 0;
   }
-  
+
   .background__img--right {
     left: 0;
     margin: 0 auto;
@@ -139,9 +151,7 @@
   }
 }
 
-
-// need to change timeblocks for these classes. Also need to remove the margin: 0 auto; from the base class.
-
+// TODO: need to change timeblocks for these classes. Also need to remove the margin: 0 auto; from the base class.
 
 .background__image {
   background-repeat: no-repeat;
@@ -200,4 +210,15 @@
 
 .text-treatment {
   text-shadow: 2px 2px 6px rgba(37, 37, 37, 0.2);
+}
+
+.absolute-center {
+  transform: translateX(50%);
+  right: 50%;
+}
+
+@include breakpoint(max-width 650px) {
+  .background__image {
+    opacity: 0.6;
+  }
 }

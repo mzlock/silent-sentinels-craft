@@ -83,7 +83,7 @@
     margin-bottom: 3rem;
 
     &:after {
-      background: color(orange);
+      background-color: color(orange);
       border-radius: 50px;
       bottom: -10px;
       content: '';
@@ -98,8 +98,7 @@
 .footer__section--2 {
   ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   li {
@@ -110,9 +109,8 @@
 
 .footer__section--3 {
   nav {
-    align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 

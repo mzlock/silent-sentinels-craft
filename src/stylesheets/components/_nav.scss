@@ -45,24 +45,16 @@
     flex: 0 0 85%;
     justify-content: space-around;
     top: 0;
+  }
 
-    a {
+  .css-button {
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
       border: 0;
-      color: white;
-      font-family: $font-heading;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border: 0;
-        color: color(darkPurple);
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
   }
 
@@ -102,6 +94,13 @@
 }
 
 @include breakpoint($tablet-down) {
+  .css-button {
+    border: 0.5rem solid white;
+    margin: 0 auto 1.5rem auto;
+    max-width: 600px;
+    padding: 3vh 0;
+  }
+
   html[data-js='hasJs'] {
     .global-navigation {
       &.wrapper {
@@ -125,27 +124,28 @@
       a {
         color: white;
 
-        &:hover, &:focus {
-          color: color(darkPurple);
+        &:hover,
+        &:focus {
+          text-decoration: underline;
         }
       }
     }
 
     .global-navigation__inner__social {
-        position: absolute;
-        bottom: 0px;
+      position: absolute;
+      bottom: 0px;
 
-        svg,
-        img {
-          display: block;
-          margin: 0 auto;
-          height: 30px;
-          width: 30px;
-        }
+      svg,
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 30px;
+        width: 30px;
+      }
 
-        path {
-          fill: color(orange);
-        }
+      path {
+        fill: color(orange);
+      }
     }
   }
 

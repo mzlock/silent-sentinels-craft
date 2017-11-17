@@ -21,7 +21,7 @@
     {% for bio in bios %}
       <li class="sentinel-bio__wrapper__index__container">
         <a class="sentinel-bio__wrapper__index__container__sentinel" style="background-image: url('{{ bio.image.first().getUrl }}')" href="{{ bio.url() }}">
-          <span>{{ i }}{{bio.sentinel}}</span>
+          <span>{{bio.sentinel}}</span>
         </a>
       </li>
     {% endfor %}
