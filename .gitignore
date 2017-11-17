@@ -13,4 +13,4 @@ public/assets
 npm-debug.log
 composer.phar
 /.vscode/
-*todo
+todo
