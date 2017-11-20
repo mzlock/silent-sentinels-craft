@@ -144,6 +144,11 @@ main > .home__navigation {
   }
 }
 
+.home__who__inner {
+  padding-bottom: 12vh;
+  padding-top: 18vh;
+}
+
 .home__who__inner__text {
   nav {
     margin-bottom: 2rem;
@@ -188,13 +193,22 @@ main > .home__navigation {
 .home__quote {
   @include fluid-type(600px, 1400px, 24px, 33px);
   background-color: color(purple);
-  padding: spacingAgainstBase(6) 0 spacingAgainstBase(4) 0;
+  padding: spacingAgainstBase(3) 0 spacingAgainstBase(2) 0;
 
-  .float-image {
-    left: 0;
-    min-width: 1500px;
-    top: -50px;
-    z-index: 1;
+  @include breakpoint(min-width 901px) {
+    .float-image {
+      opacity: 0.96;
+      top: -150px;
+      z-index: 1;
+    }
+
+    .background__img,
+    .float-image {
+      left: -150px;
+      height: initial;
+      max-height: 100%;
+      max-width: inherit;
+    }
   }
 }
 
@@ -252,6 +266,24 @@ main > .home__navigation {
   }
 }
 
+.museum__quote {
+  &:first-of-type {
+    blockquote {
+      &:after {
+        left: 26%;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    blockquote {
+      &:after {
+        left: 76%;
+      }
+    }
+  }
+}
+
 .museum__quote blockquote {
   @include fluid-type(600px, 1400px, 24px, 27px);
   background-color: white;
@@ -262,7 +294,8 @@ main > .home__navigation {
   justify-content: center;
   margin-bottom: spacingAgainstBase(1);
   min-height: 300px;
-  padding: spacingAgainstBase(3) spacingAgainstBase(2) spacingAgainstBase(6) spacingAgainstBase(2);
+  padding: spacingAgainstBase(3) spacingAgainstBase(2) spacingAgainstBase(6)
+    spacingAgainstBase(2);
   position: relative;
   text-transform: uppercase;
 
@@ -415,6 +448,12 @@ main > .home__navigation {
   }
 }
 
+@include breakpoint(901px 1600px) {
+  .home__who__inner {
+    padding: spacingAgainstBase(6) 0 spacingAgainstBase(18) 0;
+  }
+}
+
 @include breakpoint(max-width 1600px) {
   .home__campaign-museum__purpose {
     max-width: 100%;
@@ -449,6 +488,14 @@ main > .home__navigation {
   }
 }
 
+@include breakpoint(max-width 1330px) {
+  .home__quote {
+    .float-image {
+      display: none;
+    }
+  }
+}
+
 @include breakpoint(max-width 900px) {
   .home__quote__inner {
     right: 0%;
@@ -473,5 +520,23 @@ main > .home__navigation {
   .home__campaign-museum__quotes__quote__cite__person {
     height: 100px;
     width: 100px;
+  }
+
+  .museum__quote {
+    &:first-of-type {
+      blockquote {
+        &:after {
+          left: 14%;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      blockquote {
+        &:after {
+          left: 87%;
+        }
+      }
+    }
   }
 }

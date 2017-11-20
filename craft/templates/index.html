@@ -1,6 +1,6 @@
 {% extends "_layout" %}
 
-{# {% requireLogin %} #}
+{% requireLogin %}
 
 {% set homepageEntry = craft.entries.section('homepage').first() %}
 {% set timelineEntry = craft.entries.section('timeline') %} 
@@ -23,7 +23,45 @@
     position: 'top-center'
 } %}
 
-  {% include "_includes/scroll-navigation.html" %}
+{% set mobileImageSmallCenter = {
+    mode: 'crop',
+    width: 451,
+    height: 601,
+    quality: 90,
+    position: 'top-center'
+} %}
+
+{% set large = {
+    mode: 'crop',
+    width: 2051,
+    height: 751,
+    quality: 90,
+    position: 'center-center'
+} %}
+
+{% set medium = {
+    mode: 'crop',
+    width: 1741,
+    height: 551,
+    quality: 90,
+    position: 'center-left'
+} %}
+
+{% set small = {
+    mode: 'fit',
+    width: 1251,
+    height: 601,
+    quality: 90,
+    position: 'center-left'
+} %}
+
+{% set xsmall = {
+    mode: 'crop',
+    width: 501,
+    height: 601,
+    quality: 90,
+    position: 'center-left'
+} %}
 
   <header class="home__header section-padding section text-treatment" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
@@ -38,6 +76,7 @@
         {{ _self.pictureSource(homepageEntry.sectionImage1, 'laptopImage', 'min', 1440) }}
         {{ _self.pictureSource(homepageEntry.sectionImage1, 'tabletImage', 'min', 601) }}
         {{ _self.pictureSource(homepageEntry.sectionImage1, mobileImageCenter, 'max', 600) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage1, mobileImageSmallCenter, 'max', 450) }}
         <img class="background__img absolute-center max-width-img-infinite" srcset="{{ homepageEntry.sectionImage1.first().getUrl() }}">
       </picture>
       <div class="background-container__noise"></div>
@@ -66,7 +105,7 @@
   </nav>
 
   <section class="home__who section text-treatment" data-nav-item="section-2">
-    <div class="home__who__inner wrapper wrapper--small section-padding">
+    <div class="home__who__inner wrapper wrapper--small">
       <div class="home__who__inner__text container--xsmall">
         <h2 class="h2" id="section-2"><span class="heading-lead">Who were the</span>Silent Sentinels?</h2>
         <img class="float-image" src="./assets/images/home3.png" alt="">
@@ -109,13 +148,17 @@
     <div class="background-container">
       <div class="background-container__gradient" style="background-color: {{ colors.purple }}"></div>
       <picture>
-        {{ _self.pictureSource(homepageEntry.sectionImage4, 'cinemaImage', 'min', 1999) }}
-        {{ _self.pictureSource(homepageEntry.sectionImage4, 'laptopImage', 'min', 1440) }}
-        {{ _self.pictureSource(homepageEntry.sectionImage4, 'tabletImage', 'min', 601) }}
-        {{ _self.pictureSource(homepageEntry.sectionImage4, mobileImage1, 'max', 600) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, large, 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, medium, 'min', 1331) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, small, 'min', 601) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4, xsmall, 'max', 600) }}
         <img class="background__img" srcset="{{homepageEntry.sectionImage4.first().getUrl()}}">
       </picture>
-      {# to fix in post-release #}
+      <picture>
+        {{ _self.pictureSource(homepageEntry.sectionImage4Overlay, large, 'min', 1999) }}
+        {{ _self.pictureSource(homepageEntry.sectionImage4Overlay, medium, 'min', 1331) }}
+        <img class="float-image" srcset="{{homepageEntry.sectionImage4Overlay.first().getUrl()}}">
+      </picture>
       {# <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt=""> #}
       <div class="background-container__noise"></div>
     </div>
@@ -216,4 +259,6 @@
       <div class="background-container__noise"></div>
     </div>
   </section>
+
+  {% include "_includes/scroll-navigation.html" %}
 {% endblock %}

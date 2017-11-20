@@ -7,7 +7,14 @@
 }
 
 .global-navigation__inner__site-logo {
+  border: 1px solid transparent;
+  display: block;
   flex: 0 0 100px;
+
+
+  &:hover, &:focus {
+    border: 1px solid white;
+  }
 }
 
 .global-navigation__inner {
@@ -64,11 +71,9 @@
     flex: 0 0 15%;
 
     svg {
-      g,
-      path {
-        fill: white;
-        transition: all 0.2s ease;
-      }
+      border: 1px solid transparent;
+      fill: white;
+      transition: all 0.2s ease;
     }
 
     a {
@@ -77,10 +82,7 @@
         text-decoration: underline;
 
         svg {
-          g,
-          path {
-            fill: color(purple);
-          }
+          border: 1px solid white;
         }
       }
     }

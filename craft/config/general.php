@@ -4,7 +4,7 @@ return array(
         'defaultImageQuality' => 90,
 				'allowAutoUpdates' => false,
 				'enableCsrfProtection' => true,
-				// 'loginPath' => '/admin/login',
+				'loginPath' => '/admin/login',
         'omitScriptNameInUrls' => true,
         'environmentVariables' => array(
             'env' => 'production',

@@ -38,7 +38,6 @@
         style="background: {{block.colorPrimary}};"
       {% endif %}
       ></div>
-    {# <div class="background__image background__image--contain {{backgroundPosition}}" style="background-image: url('{{ block.image.first().getUrl('mobileImage') }}')"></div> #}
     <picture>
       <source srcset="{{block.image.first().getUrl('cinemaImage')}}" media="(min-width: 1999px)">
       <source srcset="{{block.image.first().getUrl('laptopImage')}}" media="(min-width: 1440px)">
