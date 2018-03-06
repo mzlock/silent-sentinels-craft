@@ -11,7 +11,7 @@ return array(
             'siteUrl' => (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['SERVER_NAME']
         )
     ),
-    '.dev' => array(
+    '.devlocal' => array(
         'allowAutoUpdates' => true,
         // 'devMode' => true,
         'enableTemplateCaching' => false,

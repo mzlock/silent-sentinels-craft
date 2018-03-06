@@ -12,56 +12,58 @@
 {% block content %}
 
   {% macro pictureSource(image, sizeObj, minOrMax, media) %}
-    <source srcset="{{ image.first().getUrl(sizeObj) }}" media="({{ minOrMax }}-width: {{ media }}px)">
+    <source srcset="{{ image.first().getUrl(sizeObj) }}"
+      media="({{ minOrMax }}-width: {{ media }}px)"
+    >
   {% endmacro %}
 
-{% set mobileImageCenter = {
-    mode: 'crop',
-    width: 601,
-    height: 701,
-    quality: 90,
-    position: 'top-center'
-} %}
+  {% set mobileImageCenter = {
+      mode: 'crop',
+      width: 601,
+      height: 701,
+      quality: 90,
+      position: 'top-center'
+  } %}
 
-{% set mobileImageSmallCenter = {
-    mode: 'crop',
-    width: 451,
-    height: 601,
-    quality: 90,
-    position: 'top-center'
-} %}
+  {% set mobileImageSmallCenter = {
+      mode: 'crop',
+      width: 451,
+      height: 601,
+      quality: 90,
+      position: 'top-center'
+  } %}
 
-{% set large = {
-    mode: 'crop',
-    width: 2051,
-    height: 751,
-    quality: 90,
-    position: 'center-center'
-} %}
+  {% set large = {
+      mode: 'crop',
+      width: 2051,
+      height: 751,
+      quality: 90,
+      position: 'center-center'
+  } %}
 
-{% set medium = {
-    mode: 'crop',
-    width: 1741,
-    height: 551,
-    quality: 90,
-    position: 'center-left'
-} %}
+  {% set medium = {
+      mode: 'crop',
+      width: 1741,
+      height: 551,
+      quality: 90,
+      position: 'center-left'
+  } %}
 
-{% set small = {
-    mode: 'fit',
-    width: 1251,
-    height: 601,
-    quality: 90,
-    position: 'center-left'
-} %}
+  {% set small = {
+      mode: 'fit',
+      width: 1251,
+      height: 601,
+      quality: 90,
+      position: 'center-left'
+  } %}
 
-{% set xsmall = {
-    mode: 'crop',
-    width: 501,
-    height: 601,
-    quality: 90,
-    position: 'center-left'
-} %}
+  {% set xsmall = {
+      mode: 'crop',
+      width: 501,
+      height: 601,
+      quality: 90,
+      position: 'center-left'
+  } %}
 
   <header class="home__header section-padding section text-treatment" data-nav-item="section-1">
     <div class="home__header__inner wrapper">
@@ -159,7 +161,6 @@
         {{ _self.pictureSource(homepageEntry.sectionImage4Overlay, medium, 'min', 1331) }}
         <img class="float-image" srcset="{{homepageEntry.sectionImage4Overlay.first().getUrl()}}">
       </picture>
-      {# <img class="float-image" src="./assets/images/home-page/home-quote4.1.png" alt=""> #}
       <div class="background-container__noise"></div>
     </div>
   </section>

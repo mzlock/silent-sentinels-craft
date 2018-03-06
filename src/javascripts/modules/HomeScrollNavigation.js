@@ -29,7 +29,8 @@ export default class HomeScrollNavigation {
   initIntersection() {
     const options = {
       root: null,
-      threshold: [0.2, 0.8]
+      rootMargin: '-100px',
+      threshold: [0.1, 0.9]
     }
 
     const observer = new IntersectionObserver(this.onEntry.bind(this), options, options)
@@ -41,9 +42,15 @@ export default class HomeScrollNavigation {
 
   onEntry(entries, observer) {
     entries.map((entry, currentIndex) => {
-      if (entry.isIntersecting) {
-        this.domTarget = document.querySelector(`[href='#${entry.target.dataset.navItem}']`)
-        this.domTarget.classList.toggle('home__scroll-navigation__inner__links--active')
+      this.domTarget = document.querySelector(`[href='#${entry.target.dataset.navItem}']`)
+      if (
+        entry.isIntersecting &&
+        entry.intersectionRatio > 0.1 &&
+        entry.intersectionRatio < 0.9
+      ) {
+        this.domTarget.classList.add('home__scroll-navigation__inner__links--active')
+      } else {
+        this.domTarget.classList.remove('home__scroll-navigation__inner__links--active')
       }
     })
   }
